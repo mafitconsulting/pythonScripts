@@ -1,0 +1,34 @@
+#!/usr/bin/python
+from __future__ import print_function
+import logging
+import boto3
+
+dynamodb = boto3.client('dynamodb')
+
+"""Sets up logging"""
+logging.basicConfig(filename='aws_dynamodb.log',
+                    format='%(asctime)s - %(levelname)s: %(message)s',
+                    level=logging.DEBUG)
+
+
+table = dynamodb.create_table(
+    TableName='importtable',
+    KeySchema=[
+        {
+            'AttributeName': 'id',
+            'KeyType': 'HASH'  #Partition key
+        },
+    ],
+    AttributeDefinitions=[
+        {
+            'AttributeName': 'id',
+            'AttributeType': 'N'
+        },
+    ],
+    ProvisionedThroughput={
+        'ReadCapacityUnits': 5,
+        'WriteCapacityUnits': 5 
+    }
+)
+
+print("Table status:", table.table_status)

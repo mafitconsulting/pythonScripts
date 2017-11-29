@@ -70,7 +70,7 @@ def delete_db_instance():
 if __name__ == '__main__':
     rds = boto3.client('rds')
     """Sets up logging"""
-    logging.basicConfig(filename='aws_s3.log',
+    logging.basicConfig(filename='aws_rds.log',
                         format='%(asctime)s - %(levelname)s: %(message)s',
                         level=logging.DEBUG)
 

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Log In - Online Cloud Training Certification | Linux Academy</title>
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="apple-itunes-app" content="app-id=1084752266">
+    <link href="/templates/cp/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/templates/cp/vendor/font-awesome/css/font-awesome.min.css">
+
+    <link href="//www.fuelcdn.com/fuelux/3.6.3/css/fuelux.min.css" rel="stylesheet">
+
+
+
+    <!-- <link href="/templates/cp/js/plugins/msgbox/jquery.msgbox.css" rel="stylesheet" />    -->
+
+    <!-- <link href="/templates/cp/assets/css/unmerged.css" rel="stylesheet" media="screen" /> -->
+    <!-- <link href="/templates/cp/assets/css/style.css" rel="stylesheet" media="screen" /> -->
+
+    <!-- <link href="/templates/cp/assets/css/templates.css" rel="stylesheet" media="screen" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/templates/cp/assets/css/tooltipster.bundle.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/templates/cp/css/tooltipster-sideTip-light.min.css" /> -->
+
+    <!-- <link href="/templates/cp/js/plugins/jwplayer/controls.css" rel="stylesheet"> -->
+
+    <!-- <link href="/templates/cp/js/plugins/msgGrowl/css/msgGrowl.css" rel="stylesheet" /> -->
+    <!-- <link href="/templates/cp/css/ui-lightness/jquery-ui-1.10.0.custom.min.css" rel="stylesheet"> -->
+
+    <link href="/lib/cache/67158650f02b3f7ce6f6e647b739fdaa_003e8b6a22e437735f25954a4474492b_fd1e0b61b25d3ac531c2509f139c4be6_c217cd1a26d2d745236c84ab3aeee968_.css?ver=1487429004" rel="stylesheet" media="screen"  />    <link href="/lib/cache/76308064f13f34af7f6526c0949adcdb_e657ea7e846ffd8ef0ec7c58fa211e6a_c5e4dd3c71869d98c53a03e81a6fe706_f4e0736a51192db64272079d13b53049_.css?ver=1487429004" rel="stylesheet" media="screen"  />    <link href="/templates/cp/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" media="screen" />
+    <link href="/lib/cache/e61ea0704d8dad382967aba48804f02a.css?ver=1487429004" rel="stylesheet" media="screen" />
+    <!-- Kissmetrics Integration -->
+    <script type="text/javascript">var _kmq = _kmq || [];
+            var _kmk = _kmk || 'a4e0fccec940e867a36ba5bdedb4cdb45d039d11';
+            function _kms(u){
+            setTimeout(function(){
+                var d = document, f = d.getElementsByTagName('script')[0],
+                    s = d.createElement('script');
+                s.type = 'text/javascript'; s.async = true; s.src = u;
+                f.parentNode.insertBefore(s, f);
+            }, 1);
+        }
+        _kms('//i.kissmetrics.com/i.js');
+        _kms('//scripts.kissmetrics.com/' + _kmk + '.2.js');
+    </script>
+    <!-- /Kissmetrics Integration -->
+
+    <script src="//use.typekit.net/gcz7etl.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script src="/templates/cp/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/lib/cache/bf35ef5df8e18871c27311e117de8261_8a75f24b57fc568570b3cd3eaf651e57_5a636092aa127d3beaa59684fa12d607_c42583c2d4ef285d62de2f4784c3bfc8_.js?ver=1487429004"></script>    <script src="/lib/cache/bf73ee1d339f143fff1324c2b54d7dac_026b83c5b3a545a5fa8f71394ae8120f_136f3c4d5302018ba22be3d1d5f55335_.js?ver=1487429004"></script><script src="/templates/cp/js/libs/jquery.caret.js"></script>
+
+
+    <script src="/lib/cache/01a1e18b1a59a971bfb1e8604b4cb573_fa69c4fd4f35978594e13332c73afd03_6638997ea48d9cc4da63a5f876a66af1_.js?ver=1487429003"></script>    <script src="/templates/cp/js/bootstrap-multiselect.js"></script>    <script src="/templates/cp/js/plugins/swfobject/swfobject.js"></script>
+
+    <meta name="description" content="Log in today to sign up for any Linux, Amazon Web Services, DevOps, SQL, LPIC and OpenStack training certification courses offered through Linux Academy.">
+  </head>
+
+  <body>
+
+    <div class="brand inverse">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            
+            <img class="pull-left" src="/templates/cp/assets/img/la-logo-white.png" width="184px" height="30px" alt="Linux Academy Logo">
+            
+            <div class="dropdown dropdown-la pull-right">
+              <a href="/">
+                <i class="fa fa-fw fa-arrow-left"></i> Back to Homepage
+              </a>
+            </div>
+            
+            <div class="dropdown dropdown-la pull-right">
+              <a href="/join/pricing">
+                <i class="fa fa-fw fa-graduation-cap"></i> Signup
+              </a>
+            </div>
+            
+          </div> <!-- /.col-x -->
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+      <hr class="color-bands">
+    </div> <!-- /.section -->
+
+		<div class="login section" style="display:inherit">
+		  <div class="container">
+		    <h2>Log In</h2>
+
+		    <form action="/cp/login" method="post">
+							      <div class="form-group">
+		        <div class="input-group">
+		          <div class="input-group-addon">
+		            <i class="fa fa-user"></i>
+		          </div>
+		          <input class="form-control" type="text" name="username" required placeholder="Username or Email" />
+		        </div>
+		      </div>
+		      <div class="form-group">
+		        <div class="input-group">
+		          <div class="input-group-addon">
+		            <i class="fa fa-lock"></i>
+		          </div>
+		          <input type="hidden" name="request_uri" value="/cp/login?redirect=/cp/guides/download/refsheets/guides/refsheets/backup-scripts_1470172879.zip" />
+		          <input class="form-control" type="password" name="password" required placeholder="Password" />
+		        </div>
+		      </div>
+		      <div class="form-group">
+		      	<input type="hidden" name="submit" value="1" />	
+		        <button type="submit"class="btn btn-la btn-la pull-right">Sign In</button>
+		      </div>
+		    </form>
+		    <div class="links">
+		      <small>
+		        <a href="/cp/login/forgot">Forgot Password</a> | <a href="/cp/login/forgotUsername">Forgot Username</a>
+		      </small>
+		    </div>
+		  </div>
+		</div>    
+
+		<div class="login section" style="display:none">
+		  <div class="container">
+		    <h2>Forgot your password?</h2>
+		    <p>Please enter your email address. You will receive a link to create a new password via email.</p>
+		    <form action="/cp/login/forgot" method="post">
+							      <div class="form-group">
+		        <div class="input-group">
+		          <div class="input-group-addon">
+		            <i class="fa fa-envelope"></i>
+		          </div>
+		          <input class="form-control" type="text" name="email" required placeholder="Email" />
+		        </div>
+		      </div>
+		      <div class="form-group">
+		      	<input type="hidden" name="submit" value="1" />	
+		        <button type="submit"class="btn btn-la btn-la pull-right">Request New Password</button>
+		      </div>
+		    </form>
+		    <div class="links">
+		      <small>
+		        <a href="/cp/login">Login</a>
+		      </small>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="login section" style="display:none">
+		  <div class="container">
+		    <h2>Forgot your username?</h2>
+		    <p>Please enter your email address. You will receive email with your registered username.</p>
+		    <form action="/cp/login/forgotUsername" method="post">
+							      <div class="form-group">
+		        <div class="input-group">
+		          <div class="input-group-addon">
+		            <i class="fa fa-envelope"></i>
+		          </div>
+		          <input class="form-control" type="text" name="email" required placeholder="Email" />
+		        </div>
+		      </div>
+		      <div class="form-group">
+		      	<input type="hidden" name="submit" value="1" />	
+		        <button type="submit"class="btn btn-la btn-la pull-right">Request Username</button>
+		      </div>
+		    </form>
+		    <div class="links">
+		      <small>
+		        <a href="/cp/login">Login</a>
+		      </small>
+		    </div>
+		  </div>
+		</div> 		 
+
+  </body>
+
+</html>
