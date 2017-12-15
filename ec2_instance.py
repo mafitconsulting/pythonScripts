@@ -12,16 +12,16 @@ import botocore
 
 def usage(option):
     """ Usage function """
-    print "\nUSAGE: " + option + "\n"
+    print("\nUSAGE: " + option + "\n")
     for case in switch(option):
         if case('default'):
-            print """
+            print("""
                 Options are: ./ec2_instance <option>
                 create_instance
                 delete_instance
                 query_instances
                 control_instances
-            """
+            """)
         break
 
 def create_instance():
@@ -36,7 +36,7 @@ def create_instance():
                 MinCount=1,
                 MaxCount=1,
                 InstanceType='t2.micro')
-            print instance[0].id
+            print (instance[0].id)
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
@@ -47,7 +47,7 @@ def delete_instance():
         for instance_id in sys.argv[2:]:
             instance = ec2.Instance(instance_id)
             response = instance.terminate()
-            print response
+            print (response)
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
@@ -56,7 +56,7 @@ def query_instances():
     try:
         logging.info("Checking for instances.....")
         for instance in ec2.instances.all():
-            print instance.tags, instance.id, instance.public_ip_address, instance.state 
+            print (instance.tags, instance.id, instance.public_ip_address, instance.state)
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
@@ -65,16 +65,16 @@ def control_instances():
     try:
         logging.info("Attempting to " + sys.argv[3] + " the instance " +  sys.argv[2])
         if sys.argv[3] == 'stop':
-            print "Stopping Instance ID " + sys.argv[2]
+            print ("Stopping Instance ID " + sys.argv[2])
             ec2.Instance(id=sys.argv[2]).stop()
         elif sys.argv[3] == 'start':
-            print "Starting Instance ID " + sys.argv[2]
+            print ("Starting Instance ID " + sys.argv[2])
             ec2.Instance(id=sys.argv[2]).start()
         elif sys.argv[3] == 'terminate':
-            print "Terminating Instance ID " + sys.argv[2]
+            print ("Terminating Instance ID " + sys.argv[2])
             ec2.instance(id=sys.argv[2]).terminate()
         else:
-            print "Not a valid argument. Supports (stop|start|terminate)"
+            print ("Not a valid argument. Supports (stop|start|terminate)")
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
@@ -107,5 +107,5 @@ if __name__ == '__main__':
             control_instances()
             break
         if case():
-            print "No instance option initiated"
+            print ("No instance option initiated")
             break
