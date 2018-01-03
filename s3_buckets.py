@@ -1,9 +1,8 @@
-#!/usr/bin/python2
-import boto3
-import botocore
-import os
+#!/bin/python
 import sys
 import logging
+import boto3
+import botocore
 from switch import switch
 
 
@@ -12,7 +11,7 @@ def create_bucket(bucket_name):
         logging.info("Creating bucket " + bucket_name)
         bucket = s3.Bucket(bucket_name)
         s3.create_bucket(Bucket=bucket_name,
-                        CreateBucketConfiguration={'LocationConstraint':'eu-west-1'})
+                         CreateBucketConfiguration={'LocationConstraint':'eu-west-1'})
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
@@ -33,6 +32,7 @@ def query_bucket(bucket_name):
         logging.info("Printing objects in bucket "  + bucket_name)
         bucket = s3.Bucket(bucket_name)
         logging.info("The items in the bucket are:")
+        print("The items in the bucket are:")
         for key in bucket.objects.all():
             print(key.key)
     except botocore.exceptions.ClientError as e:
@@ -67,11 +67,24 @@ def upload_object(bucket_name):
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
+def list_buckets():
+    try:
+	logging.info("Listing all buckets........please wait")
+        buckets = s3.buckets.all()
+	for key in buckets:
+    	    print key.name
+    except botocore.exceptions.ClientError as e:
+        logging.error(e.response['Error']['Code'])
+        
+         
+
 
 if __name__ == '__main__':
     # Takes bucket name as argument
     action = sys.argv[1]
-    bucket_name = sys.argv[2]
+    if action != 'list-buckets':
+    	bucket_name = sys.argv[2]
+    
 
     # Sets up logging
     logging.basicConfig(filename='aws_s3.log',
@@ -87,21 +100,26 @@ if __name__ == '__main__':
         if case('create-bucket'):
             create_bucket(bucket_name)
             break
-        if case ('delete-bucket'):
-            create_bucket(bucket_name)
+        if case('list-buckets'):
+	    list_buckets()
             break
-        if case ('query-bucket'):
+        if case('delete-bucket'):
+            delete_bucket(bucket_name)
+            print("Action Complete")
+            break
+        if case('query-bucket'):
             query_bucket(bucket_name)
+            print("Action Complete")
             break
-        if case ('upload-to-bucket'):
+        if case('upload-to-bucket'):
             upload_object(bucket_name)
             break
-        if case ('query-acl'):
+        if case('query-acl'):
             query_bucket_acl(bucket_name)
             break
-        if case ('change-acl'):
+        if case('change-acl'):
             change_bucket_acl(bucket_name)
             break
         if case():
-            print "No such action"
+            print("No such action")
 
