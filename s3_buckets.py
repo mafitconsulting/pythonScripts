@@ -15,6 +15,15 @@ def create_bucket(bucket_name):
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
+def get_all_versions(bucket, filename):
+    s3 = boto3.client('s3')
+    keys = ["Versions", "DeleteMarkers"]
+    results = []
+    for k in keys:
+        response = s3.list_object_versions(Bucket=bucket)[k]
+        to_delete = [r["VersionId"] for r in response if r["Key"] == filename]
+    results.extend(to_delete)
+    return results
 
 def delete_bucket(bucket_name):
     try:
@@ -23,6 +32,8 @@ def delete_bucket(bucket_name):
         print ("Deleting Bucket " + bucket_name)
         for key in bucket.objects.all():
             key.delete()
+            for version in get_all_versions(bucket_name, key):
+               s3.delete_object(Bucket=bucket_name, Key=key, VersionId=version)
         bucket.delete()
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
@@ -69,27 +80,37 @@ def upload_object(bucket_name):
 
 def list_buckets():
     try:
-	logging.info("Listing all buckets........please wait")
+        logging.info("Listing all buckets........please wait")
         buckets = s3.buckets.all()
-	for key in buckets:
-    	    print key.name
+        for key in buckets:
+            print key.name
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
-        
-         
+
+def download_object(bucket_name):
+    try:
+        KEY = sys.argv[3]
+        logging.info("Downloading file from bucket........please wait")
+        print ("Downloading File %s" % KEY)
+        s3.Bucket(bucket_name).download_file(KEY, KEY)
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "404":
+            print("The object does not exist.")
+        else:
+            raise
 
 
 if __name__ == '__main__':
     # Takes bucket name as argument
     action = sys.argv[1]
     if action != 'list-buckets':
-    	bucket_name = sys.argv[2]
-    
+        bucket_name = sys.argv[2]
+
 
     # Sets up logging
     logging.basicConfig(filename='aws_s3.log',
-                    format = '%(asctime)s - %(levelname)s: %(message)s',
-                    level=logging.DEBUG)
+                        format = '%(asctime)s - %(levelname)s: %(message)s',
+                        level=logging.ERROR)
 
     # Sets resource s3 for use
     s3 = boto3.resource('s3')
@@ -101,7 +122,7 @@ if __name__ == '__main__':
             create_bucket(bucket_name)
             break
         if case('list-buckets'):
-	    list_buckets()
+            list_buckets()
             break
         if case('delete-bucket'):
             delete_bucket(bucket_name)
@@ -113,6 +134,9 @@ if __name__ == '__main__':
             break
         if case('upload-to-bucket'):
             upload_object(bucket_name)
+            break
+        if case('download-file'):
+            download_object(bucket_name)
             break
         if case('query-acl'):
             query_bucket_acl(bucket_name)

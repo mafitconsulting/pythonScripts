@@ -12,7 +12,7 @@ import botocore
 
 def usage(option):
     """ Usage function """
-    print("\nUSAGE: " + option + "\n")
+    print "\nUSAGE: " + option + "\n"
     for case in switch(option):
         if case('default'):
             print("""
@@ -65,7 +65,7 @@ def control_instances():
     try:
         logging.info("Attempting to " + sys.argv[3] + " the instance " +  sys.argv[2])
         if sys.argv[3] == 'stop':
-            print ("Stopping Instance ID " + sys.argv[2])
+            print "Stopping Instance ID " + sys.argv[2]
             ec2.Instance(id=sys.argv[2]).stop()
         elif sys.argv[3] == 'start':
             print ("Starting Instance ID " + sys.argv[2])
@@ -74,7 +74,7 @@ def control_instances():
             print ("Terminating Instance ID " + sys.argv[2])
             ec2.instance(id=sys.argv[2]).terminate()
         else:
-            print ("Not a valid argument. Supports (stop|start|terminate)")
+            print "Not a valid argument. Supports (stop|start|terminate)"
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
