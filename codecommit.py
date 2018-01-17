@@ -16,13 +16,14 @@ parser.add_argument("--createrepository", help="Creates a codecommit repository,
 parser.add_argument("--deleterepository", help="Creates a codecommit repository, requires repository name")
 parser.add_argument("--description", help="Decription for code repository")
 parser.add_argument("--createbranch", help="Create new branch, requires description and repos name")
+parser.add_argument("--repositoryname", help="repositoryname to create branch in")
 args = parser.parse_args()
 
 
 # Sets up logging
 logging.basicConfig(filename='aws_codecommit.log',
                    format='%(asctime)s - %(levelname)s: %(message)s',
-                   level=logging.DEBUG)
+                   level=logging.ERROR)
 
 # Sets resource s3 for use
 client = boto3.client('codecommit')
@@ -84,15 +85,20 @@ def create_repository(repository_name,repository_description):
 
 
 def create_branch(repository_name, branch_name):
-    logging.info("Creating repository branch " % branch_name)
+    logging.info("Creating repository branch %s" % branch_name)
     try:
-        commit = ''.join(random.choice('0123456789ABCDEFabcdef') for i in range(10))
+        commit = ''.join(random.choice('ABCDEFabcdef') for i in range(10))
         response = client.create_branch(
-                   repositoryName=repository_name
-                   branchName=branch_name
-                   commitId=commit
+                   repositoryName=repository_name,
+                   branchName=branch_name,
+                   commitId=str(commit)
         )
-        print(json.dumps(response, indent=4, default=str))
+        branch = client.get_branch(
+                 repositoryName=repository_name,
+                 branchName=branch_name
+        )
+
+        print(json.dumps(branch, indent=4, default=str))
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
@@ -107,5 +113,5 @@ elif args.createrepository:
     create_repository(args.createrepository,args.description)
 elif args.deleterepository:
     delete_repository(args.deleterepository)
-elif args.create_branch(
-
+elif args.createbranch:
+    create_branch(args.createbranch,args.repositoryname)
