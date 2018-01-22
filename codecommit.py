@@ -87,7 +87,7 @@ def create_repository(repository_name,repository_description):
 def create_branch(repository_name, branch_name):
     logging.info("Creating repository branch %s" % branch_name)
     try:
-        commit = ''.join(random.choice('ABCDEFabcdef') for i in range(10))
+        commit = ''.join(random.choice('ABCDEFabcdef012345') for i in range(10))
         response = client.create_branch(
                    repositoryName=repository_name,
                    branchName=branch_name,
