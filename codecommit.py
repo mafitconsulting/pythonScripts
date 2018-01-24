@@ -16,6 +16,7 @@ parser.add_argument("--createrepository", help="Creates a codecommit repository,
 parser.add_argument("--deleterepository", help="Creates a codecommit repository, requires repository name")
 parser.add_argument("--description", help="Decription for code repository")
 parser.add_argument("--createbranch", help="Create new branch, requires description and repos name")
+parser.add_argument("--getbranch", help="queries branch from repo, requires repos name")
 parser.add_argument("--repositoryname", help="repositoryname to create branch in")
 args = parser.parse_args()
 
@@ -102,6 +103,18 @@ def create_branch(repository_name, branch_name):
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
 
+def get_branch(repository_name):
+    logging.info("Getting branch information from repos %s" % (repository_name))
+    try:
+         response = client.list_branches(
+                    repositoryName=repository_name,
+         )
+         print(json.dumps(response, indent=4, default=str))
+    except botocore.exceptions.ClientError as e:
+        logging.error(e.response['Error']['Code'])
+        print (e.response['Error']['Code'])
+
+
 
 # Dispatch structure for action
 
@@ -115,3 +128,5 @@ elif args.deleterepository:
     delete_repository(args.deleterepository)
 elif args.createbranch:
     create_branch(args.createbranch,args.repositoryname)
+elif args.getbranch:
+    get_branch(args.getbranch)
