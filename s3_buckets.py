@@ -1,5 +1,6 @@
 #!/bin/python
 import sys
+import os
 import logging
 import boto3
 import botocore
@@ -70,13 +71,42 @@ def change_bucket_acl(bucket_name):
 
 
 def upload_object(bucket_name):
+    size = 100
     try:
         file = sys.argv[3]
-        logging.info("Attempting to upload " + file + "to bucket" + bucket_name)
-        response = s3.Object(bucket_name, file).put(Body=open(file, 'rb'))
-        print response
+        filesz = os.stat(file).st_size >> 20
+        if int(filesz) > int(size):
+            print("Using multipart upload...")
+            mpupload(bucket_name,file)
+        else:
+            logging.info("Attempting to upload " + file + "to bucket" + bucket_name)
+            response = s3.Object(bucket_name, file).put(Body=open(file, 'rb'))
+            print response
+    except IOError:
+        print("File not found")
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
+
+def mpupload(bucket_name,file):
+    # Initiate the multipart upload and send the part(s)
+    s3 = boto3.client('s3')
+    mpu = s3.create_multipart_upload(Bucket=bucket_name,Key=file)
+    part1 = s3.upload_part(Bucket=bucket_name, Key=file, PartNumber=1,
+                           UploadId=mpu['UploadId'], Body='Testfile')
+    # Next, we need to gather information about each part to complete
+    # the upload. Needed are the part number and ETag.
+    part_info = {
+                'Parts': [
+                            {
+                              'PartNumber': 1,
+                              'ETag': part1['ETag']
+                            }
+                         ]
+                }
+    # Now the upload works!
+    s3.complete_multipart_upload(Bucket=bucket_name, Key=file, UploadId=mpu['UploadId'],
+                                 MultipartUpload=part_info)
+
 
 def list_buckets():
     try:
