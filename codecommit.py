@@ -83,6 +83,7 @@ def create_repository(repository_name,repository_description):
         print(json.dumps(response, indent=4, default=str))
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
+        print(e.response['Error']['Code'])
 
 
 def create_branch(repository_name, branch_name):
