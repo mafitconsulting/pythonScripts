@@ -1,2 +1,363 @@
 2018-01-31 19:50:00,780 - ERROR: BucketAlreadyExists
 2018-01-31 19:50:47,593 - ERROR: BucketAlreadyExists
+2018-02-10 16:51:50,398 - INFO: Checking for instances.....
+2018-02-10 16:51:50,401 - DEBUG: Loading JSON file: /home/user/.local/lib/python2.7/site-packages/botocore/data/ec2/2016-11-15/paginators-1.json
+2018-02-10 16:51:50,401 - DEBUG: Calling paginated ec2:describe_instances with {}
+2018-02-10 16:51:50,402 - DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x23b6050>>
+2018-02-10 16:51:50,402 - DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23b20c8>
+2018-02-10 16:51:50,402 - DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', 'Version': u'2016-11-15'}, 'url': u'https://ec2.eu-west-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.5.22 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.36 Resource'}, 'context': {'auth_type': None, 'client_region': 'eu-west-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x358e2d0>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-10 16:51:50,403 - DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x358e210>>
+2018-02-10 16:51:50,403 - DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23b1f50>
+2018-02-10 16:51:50,403 - DEBUG: Calculating signature using v4 auth.
+2018-02-10 16:51:50,403 - DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.eu-west-1.amazonaws.com
+x-amz-date:20180210T165150Z
+
+content-type;host;x-amz-date
+6171eb09865e32b0602af0f7957e26573a51f53caaedff02ff88883cb0275885
+2018-02-10 16:51:50,404 - DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180210T165150Z
+20180210/eu-west-1/ec2/aws4_request
+9e28688e816f9179ffb57df6e91adba5543ba1375daa0bf9a32c3223dacdc881
+2018-02-10 16:51:50,404 - DEBUG: Signature:
+4e886c34ddd9990380f0b1ee9b811046259466d1020cf7b83fadc7292c24d722
+2018-02-10 16:51:50,409 - DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-10 16:51:50,409 - INFO: Starting new HTTPS connection (1): ec2.eu-west-1.amazonaws.com
+2018-02-10 16:51:50,555 - DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-10 16:51:50,556 - DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Sat, 10 Feb 2018 16:51:50 GMT'}
+2018-02-10 16:51:50,556 - DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>9f817ac1-67a5-4a64-b77f-87f57a52aec8</requestId>
+    <reservationSet>
+        <item>
+            <reservationId>r-0dc9bee578b57a443</reservationId>
+            <ownerId>231871078230</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-0a8f2a23ecef36b6a</instanceId>
+                    <imageId>ami-c90195b0</imageId>
+                    <instanceState>
+                        <code>80</code>
+                        <name>stopped</name>
+                    </instanceState>
+                    <privateDnsName>ip-172-31-27-19.eu-west-1.compute.internal</privateDnsName>
+                    <dnsName/>
+                    <reason>User initiated (2018-02-09 08:21:00 GMT)</reason>
+                    <keyName>mafit</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t2.micro</instanceType>
+                    <launchTime>2018-02-07T18:55:04.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>eu-west-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-d3f41ca5</subnetId>
+                    <vpcId>vpc-68fde40d</vpcId>
+                    <privateIpAddress>172.31.27.19</privateIpAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-5ce83e26</groupId>
+                            <groupName>openshift</groupName>
+                        </item>
+                    </groupSet>
+                    <stateReason>
+                        <code>Client.UserInitiatedShutdown</code>
+                        <message>Client.UserInitiatedShutdown: User initiated shutdown</message>
+                    </stateReason>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-07d319ce4ec4fe6a2</volumeId>
+                                <status>attached</status>
+                                <attachTime>2018-02-07T18:55:05.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>hvm</virtualizationType>
+                    <clientToken/>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>openshift-node</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-0bd63638</networkInterfaceId>
+                            <subnetId>subnet-d3f41ca5</subnetId>
+                            <vpcId>vpc-68fde40d</vpcId>
+                            <description/>
+                            <ownerId>231871078230</ownerId>
+                            <status>in-use</status>
+                            <macAddress>06:be:7a:75:45:42</macAddress>
+                            <privateIpAddress>172.31.27.19</privateIpAddress>
+                            <privateDnsName>ip-172-31-27-19.eu-west-1.compute.internal</privateDnsName>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-5ce83e26</groupId>
+                                    <groupName>openshift</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-b24788c8</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2018-02-07T18:55:04.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>172.31.27.19</privateIpAddress>
+                                    <privateDnsName>ip-172-31-27-19.eu-west-1.compute.internal</privateDnsName>
+                                    <primary>true</primary>
+                                </item>
+                            </privateIpAddressesSet>
+                            <ipv6AddressesSet/>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                    <enaSupport>true</enaSupport>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-0d1a029a244ede974</reservationId>
+            <ownerId>231871078230</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-05eaa6e3e0a553488</instanceId>
+                    <imageId>ami-1a962263</imageId>
+                    <instanceState>
+                        <code>80</code>
+                        <name>stopped</name>
+                    </instanceState>
+                    <privateDnsName>ip-172-31-19-184.eu-west-1.compute.internal</privateDnsName>
+                    <dnsName/>
+                    <reason>User initiated (2018-02-07 18:52:29 GMT)</reason>
+                    <keyName>mafit</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t2.micro</instanceType>
+                    <launchTime>2017-12-15T07:59:49.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>eu-west-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-d3f41ca5</subnetId>
+                    <vpcId>vpc-68fde40d</vpcId>
+                    <privateIpAddress>172.31.19.184</privateIpAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-c97703b2</groupId>
+                            <groupName>ec2-jenkins-group</groupName>
+                        </item>
+                    </groupSet>
+                    <stateReason>
+                        <code>Client.UserInitiatedShutdown</code>
+                        <message>Client.UserInitiatedShutdown: User initiated shutdown</message>
+                    </stateReason>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/xvda</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/xvda</deviceName>
+                            <ebs>
+                                <volumeId>vol-06fe0cc5a4be94cc2</volumeId>
+                                <status>attached</status>
+                                <attachTime>2017-12-06T07:31:19.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>hvm</virtualizationType>
+                    <clientToken/>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>JenkinsBuildServer</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-4f0f9f7e</networkInterfaceId>
+                            <subnetId>subnet-d3f41ca5</subnetId>
+                            <vpcId>vpc-68fde40d</vpcId>
+                            <description/>
+                            <ownerId>231871078230</ownerId>
+                            <status>in-use</status>
+                            <macAddress>06:82:e4:4c:68:f2</macAddress>
+                            <privateIpAddress>172.31.19.184</privateIpAddress>
+                            <privateDnsName>ip-172-31-19-184.eu-west-1.compute.internal</privateDnsName>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-c97703b2</groupId>
+                                    <groupName>ec2-jenkins-group</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-e1e4320e</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2017-12-06T07:31:18.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>172.31.19.184</privateIpAddress>
+                                    <privateDnsName>ip-172-31-19-184.eu-west-1.compute.internal</privateDnsName>
+                                    <primary>true</primary>
+                                </item>
+                            </privateIpAddressesSet>
+                            <ipv6AddressesSet/>
+                        </item>
+                    </networkInterfaceSet>
+                    <iamInstanceProfile>
+                        <arn>arn:aws:iam::231871078230:instance-profile/JenkinsEC2Role</arn>
+                        <id>AIPAJLHDH555WLDP2UO5M</id>
+                    </iamInstanceProfile>
+                    <ebsOptimized>false</ebsOptimized>
+                    <enaSupport>true</enaSupport>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-0e6fe4b5bd4f094c7</reservationId>
+            <ownerId>231871078230</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-035670bba20ad4225</instanceId>
+                    <imageId>ami-c90195b0</imageId>
+                    <instanceState>
+                        <code>80</code>
+                        <name>stopped</name>
+                    </instanceState>
+                    <privateDnsName>ip-172-31-26-139.eu-west-1.compute.internal</privateDnsName>
+                    <dnsName/>
+                    <reason>User initiated (2018-02-09 08:21:00 GMT)</reason>
+                    <keyName>mafit</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t2.medium</instanceType>
+                    <launchTime>2018-02-05T19:52:04.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>eu-west-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-d3f41ca5</subnetId>
+                    <vpcId>vpc-68fde40d</vpcId>
+                    <privateIpAddress>172.31.26.139</privateIpAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-5ce83e26</groupId>
+                            <groupName>openshift</groupName>
+                        </item>
+                    </groupSet>
+                    <stateReason>
+                        <code>Client.UserInitiatedShutdown</code>
+                        <message>Client.UserInitiatedShutdown: User initiated shutdown</message>
+                    </stateReason>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-07fed2cb61da38778</volumeId>
+                                <status>attached</status>
+                                <attachTime>2018-02-05T19:52:05.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>hvm</virtualizationType>
+                    <clientToken/>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>openshift-master</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-aee9fb9e</networkInterfaceId>
+                            <subnetId>subnet-d3f41ca5</subnetId>
+                            <vpcId>vpc-68fde40d</vpcId>
+                            <description/>
+                            <ownerId>231871078230</ownerId>
+                            <status>in-use</status>
+                            <macAddress>06:b4:17:39:13:92</macAddress>
+                            <privateIpAddress>172.31.26.139</privateIpAddress>
+                            <privateDnsName>ip-172-31-26-139.eu-west-1.compute.internal</privateDnsName>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-5ce83e26</groupId>
+                                    <groupName>openshift</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-c8c703b2</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2018-02-05T19:52:04.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>172.31.26.139</privateIpAddress>
+                                    <privateDnsName>ip-172-31-26-139.eu-west-1.compute.internal</privateDnsName>
+                                    <primary>true</primary>
+                                </item>
+                            </privateIpAddressesSet>
+                            <ipv6AddressesSet/>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                    <enaSupport>true</enaSupport>
+                </item>
+            </instancesSet>
+        </item>
+    </reservationSet>
+</DescribeInstancesResponse>
+2018-02-10 16:51:50,567 - DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x35a4410>
+2018-02-10 16:51:50,568 - DEBUG: No retry needed.
+2018-02-10 16:51:50,568 - DEBUG: Loading ec2:Instance
+2018-02-10 16:51:50,570 - DEBUG: Renaming Instance attribute network_interfaces
+2018-02-10 16:51:50,573 - DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x242bcf8>
