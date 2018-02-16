@@ -1,0 +1,6 @@
+---
+title: "Server name:  %{::fqdn}"
+message: This is a test override
+subtitle: Default Subheading to be overridden.
+product_version: 3.27.0
+profile_base::nimsoft: false
