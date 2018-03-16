@@ -1,0 +1,16 @@
+---
+fieldhousem:
+  name: 'Mark Fieldhouse'
+  policies: 'arn:aws:iam::aws:policy/AdministratorAccess'
+  programmatic: True
+  console: True
+  mfa: False
+
+progdev:
+   name: 'Dev Test Account'
+   policies: 'arn:aws:iam::aws:policy/AdministratorAccess'
+   programmatic: True
+   console: True
+   mfa: False
+
+

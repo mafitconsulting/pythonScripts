@@ -43638,3 +43638,955 @@ AWS4-HMAC-SHA256
 2018-02-13 18:50:27,570 = DEBUG: Loading ec2:Instance
 2018-02-13 18:50:27,593 = DEBUG: Renaming Instance attribute network_interfaces
 2018-02-13 18:50:27,613 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x221a9b0>
+2018-02-28 08:57:07,809 = DEBUG: Event before-parameter-build.ec2.DescribeRegions: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:07,814 = DEBUG: Event before-parameter-build.ec2.DescribeRegions: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:07,815 = DEBUG: Making request for OperationModel(name=DescribeRegions) (verify_ssl=True) with params: {'body': {'Action': u'DescribeRegions', 'Version': u'2016-11-15'}, 'url': u'https://ec2.eu-west-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34'}, 'context': {'auth_type': None, 'client_region': 'eu-west-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x33ada90>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:07,815 = DEBUG: Event request-created.ec2.DescribeRegions: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x33ad9d0>>
+2018-02-28 08:57:07,816 = DEBUG: Event choose-signer.ec2.DescribeRegions: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:07,817 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:07,818 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.eu-west-1.amazonaws.com
+x-amz-date:20180228T085707Z
+
+content-type;host;x-amz-date
+903451d1f3cda66f6ac7101b5810af53eb3ce6b47c5162b0b2238ce9086b6a0d
+2018-02-28 08:57:07,818 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085707Z
+20180228/eu-west-1/ec2/aws4_request
+5d978d3520a7bc74ae39c419d19597b8f509b22bff0d9521cbc37f80df81f243
+2018-02-28 08:57:07,818 = DEBUG: Signature:
+e829d134b652a1989f90ded7b90f6f3dcd6dbe2a07161e4227e84a666d954ad9
+2018-02-28 08:57:07,831 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:07,832 = INFO: Starting new HTTPS connection (1): ec2.eu-west-1.amazonaws.com
+2018-02-28 08:57:08,064 = DEBUG: "POST / HTTP/1.1" 200 2559
+2018-02-28 08:57:08,066 = DEBUG: Response headers: {'date': 'Wed, 28 Feb 2018 08:57:07 GMT', 'vary': 'Accept-Encoding', 'content-length': '2559', 'content-type': 'text/xml;charset=UTF-8', 'server': 'AmazonEC2'}
+2018-02-28 08:57:08,066 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeRegionsResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>bc3efbe3-bdd4-4ab2-87e0-8a7e7911679c</requestId>
+    <regionInfo>
+        <item>
+            <regionName>ap-south-1</regionName>
+            <regionEndpoint>ec2.ap-south-1.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>eu-west-3</regionName>
+            <regionEndpoint>ec2.eu-west-3.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>eu-west-2</regionName>
+            <regionEndpoint>ec2.eu-west-2.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>eu-west-1</regionName>
+            <regionEndpoint>ec2.eu-west-1.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>ap-northeast-2</regionName>
+            <regionEndpoint>ec2.ap-northeast-2.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>ap-northeast-1</regionName>
+            <regionEndpoint>ec2.ap-northeast-1.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>sa-east-1</regionName>
+            <regionEndpoint>ec2.sa-east-1.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>ca-central-1</regionName>
+            <regionEndpoint>ec2.ca-central-1.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>ap-southeast-1</regionName>
+            <regionEndpoint>ec2.ap-southeast-1.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>ap-southeast-2</regionName>
+            <regionEndpoint>ec2.ap-southeast-2.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>eu-central-1</regionName>
+            <regionEndpoint>ec2.eu-central-1.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>us-east-1</regionName>
+            <regionEndpoint>ec2.us-east-1.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>us-east-2</regionName>
+            <regionEndpoint>ec2.us-east-2.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>us-west-1</regionName>
+            <regionEndpoint>ec2.us-west-1.amazonaws.com</regionEndpoint>
+        </item>
+        <item>
+            <regionName>us-west-2</regionName>
+            <regionEndpoint>ec2.us-west-2.amazonaws.com</regionEndpoint>
+        </item>
+    </regionInfo>
+</DescribeRegionsResponse>
+
+2018-02-28 08:57:08,068 = DEBUG: Event needs-retry.ec2.DescribeRegions: calling handler <botocore.retryhandler.RetryHandler object at 0x33b6bd0>
+2018-02-28 08:57:08,068 = DEBUG: No retry needed.
+2018-02-28 08:57:08,072 = DEBUG: Loading JSON file: /usr/lib/python2.7/site-packages/boto3/data/ec2/2016-11-15/resources-1.json
+2018-02-28 08:57:08,085 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:08,085 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:08,085 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:08,085 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:08,089 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:08,089 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:08,090 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:08,091 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:08,091 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:08,098 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:08,104 = DEBUG: Loading JSON file: /usr/lib/python2.7/site-packages/botocore/data/ec2/2016-11-15/paginators-1.json
+2018-02-28 08:57:08,104 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:08,105 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:08,105 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:08,106 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.ap-south-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'ap-south-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x3b67350>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:08,106 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x3b672d0>>
+2018-02-28 08:57:08,106 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:08,106 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:08,106 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.ap-south-1.amazonaws.com
+x-amz-date:20180228T085708Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:08,106 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085708Z
+20180228/ap-south-1/ec2/aws4_request
+793c3e16232bb561a00810a5e02aaf4d1f01f016e99646c04e48e483c235dc0e
+2018-02-28 08:57:08,106 = DEBUG: Signature:
+5fc29a6f7f88a1ccfd2dc5d6f3b6502db29cdcca39f30846c1de17e0fc9c4f67
+2018-02-28 08:57:08,107 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:08,107 = INFO: Starting new HTTPS connection (1): ec2.ap-south-1.amazonaws.com
+2018-02-28 08:57:09,254 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:09,256 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:08 GMT'}
+2018-02-28 08:57:09,256 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>3024387c-18a9-4f55-a5c5-4e4abb280655</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:09,256 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x3b74290>
+2018-02-28 08:57:09,256 = DEBUG: No retry needed.
+2018-02-28 08:57:09,257 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:09,260 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:09,264 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:09,266 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:09,266 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:09,267 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:09,267 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:09,274 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:09,274 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:09,276 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:09,278 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:09,278 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:09,286 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:09,288 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:09,288 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:09,289 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:09,289 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.eu-west-3.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'eu-west-3', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x3e14890>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:09,290 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x3c261d0>>
+2018-02-28 08:57:09,290 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:09,290 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:09,290 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.eu-west-3.amazonaws.com
+x-amz-date:20180228T085709Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:09,291 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085709Z
+20180228/eu-west-3/ec2/aws4_request
+0677c0b6aee4bae1b214b40cd440b43aeacebc9827887d02ab11969786e40012
+2018-02-28 08:57:09,291 = DEBUG: Signature:
+b7d648256f0ab2c5d1b1efed1f0f4fc0203499cede3bcd9937227fe29d8b044d
+2018-02-28 08:57:09,291 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:09,292 = INFO: Starting new HTTPS connection (1): ec2.eu-west-3.amazonaws.com
+2018-02-28 08:57:09,496 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:09,497 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:09 GMT'}
+2018-02-28 08:57:09,497 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>1e17f8fb-4eff-403f-a1d0-cc15c819f135</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:09,497 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x3e1f810>
+2018-02-28 08:57:09,498 = DEBUG: No retry needed.
+2018-02-28 08:57:09,498 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:09,500 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:09,502 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:09,503 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:09,503 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:09,503 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:09,503 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:09,507 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:09,508 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:09,510 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:09,511 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:09,511 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:09,517 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:09,519 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:09,520 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:09,520 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:09,521 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.eu-west-2.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'eu-west-2', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x3f248d0>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:09,521 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x3b67790>>
+2018-02-28 08:57:09,521 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:09,522 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:09,522 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.eu-west-2.amazonaws.com
+x-amz-date:20180228T085709Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:09,522 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085709Z
+20180228/eu-west-2/ec2/aws4_request
+81b60ab623a5c2dd017513d4c0f531a1d041bdfa29587c4254491b7612f44564
+2018-02-28 08:57:09,522 = DEBUG: Signature:
+d4f66a857b3b53f28dc413978459f459ae3c3cfe9dd741024eb45d731a58f6dc
+2018-02-28 08:57:09,523 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:09,523 = INFO: Starting new HTTPS connection (1): ec2.eu-west-2.amazonaws.com
+2018-02-28 08:57:09,664 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:09,668 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:08 GMT'}
+2018-02-28 08:57:09,669 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>7074207b-67eb-465f-938f-d0e88981ae7e</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:09,670 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x3ff4850>
+2018-02-28 08:57:09,671 = DEBUG: No retry needed.
+2018-02-28 08:57:09,672 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:09,683 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:09,701 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:09,702 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:09,703 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:09,703 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:09,703 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:09,711 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:09,712 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:09,714 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:09,716 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:09,716 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:09,725 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:09,727 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:09,728 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:09,728 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:09,729 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.eu-west-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'eu-west-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x410d910>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:09,729 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x410d890>>
+2018-02-28 08:57:09,729 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:09,729 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:09,729 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.eu-west-1.amazonaws.com
+x-amz-date:20180228T085709Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:09,730 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085709Z
+20180228/eu-west-1/ec2/aws4_request
+89a0568ee854fa1798eab555e2a6151c6a341ea65f820ef62fa94dcfa2df863a
+2018-02-28 08:57:09,730 = DEBUG: Signature:
+1ce0cce35fec0f357158c4ba52309ff2b23da9546cd39f3a52c0f8247b4dbb62
+2018-02-28 08:57:09,730 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:09,730 = INFO: Starting new HTTPS connection (1): ec2.eu-west-1.amazonaws.com
+2018-02-28 08:57:10,012 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:10,013 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:09 GMT'}
+2018-02-28 08:57:10,013 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>c8d5a924-9e33-45d3-ab38-ff24882c5146</requestId>
+    <reservationSet>
+        <item>
+            <reservationId>r-0d1a029a244ede974</reservationId>
+            <ownerId>231871078230</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-05eaa6e3e0a553488</instanceId>
+                    <imageId>ami-1a962263</imageId>
+                    <instanceState>
+                        <code>16</code>
+                        <name>running</name>
+                    </instanceState>
+                    <privateDnsName>ip-172-31-19-184.eu-west-1.compute.internal</privateDnsName>
+                    <dnsName>ec2-34-244-129-190.eu-west-1.compute.amazonaws.com</dnsName>
+                    <reason/>
+                    <keyName>mafit</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t2.micro</instanceType>
+                    <launchTime>2018-02-17T12:51:31.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>eu-west-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-d3f41ca5</subnetId>
+                    <vpcId>vpc-68fde40d</vpcId>
+                    <privateIpAddress>172.31.19.184</privateIpAddress>
+                    <ipAddress>34.244.129.190</ipAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-c97703b2</groupId>
+                            <groupName>ec2-jenkins-group</groupName>
+                        </item>
+                    </groupSet>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/xvda</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/xvda</deviceName>
+                            <ebs>
+                                <volumeId>vol-06fe0cc5a4be94cc2</volumeId>
+                                <status>attached</status>
+                                <attachTime>2017-12-06T07:31:19.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>hvm</virtualizationType>
+                    <clientToken/>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>JenkinsBuildServer</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-4f0f9f7e</networkInterfaceId>
+                            <subnetId>subnet-d3f41ca5</subnetId>
+                            <vpcId>vpc-68fde40d</vpcId>
+                            <description/>
+                            <ownerId>231871078230</ownerId>
+                            <status>in-use</status>
+                            <macAddress>06:82:e4:4c:68:f2</macAddress>
+                            <privateIpAddress>172.31.19.184</privateIpAddress>
+                            <privateDnsName>ip-172-31-19-184.eu-west-1.compute.internal</privateDnsName>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-c97703b2</groupId>
+                                    <groupName>ec2-jenkins-group</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-e1e4320e</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2017-12-06T07:31:18.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <association>
+                                <publicIp>34.244.129.190</publicIp>
+                                <publicDnsName>ec2-34-244-129-190.eu-west-1.compute.amazonaws.com</publicDnsName>
+                                <ipOwnerId>amazon</ipOwnerId>
+                            </association>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>172.31.19.184</privateIpAddress>
+                                    <privateDnsName>ip-172-31-19-184.eu-west-1.compute.internal</privateDnsName>
+                                    <primary>true</primary>
+                                    <association>
+                                    <publicIp>34.244.129.190</publicIp>
+                                    <publicDnsName>ec2-34-244-129-190.eu-west-1.compute.amazonaws.com</publicDnsName>
+                                    <ipOwnerId>amazon</ipOwnerId>
+                                    </association>
+                                </item>
+                            </privateIpAddressesSet>
+                            <ipv6AddressesSet/>
+                        </item>
+                    </networkInterfaceSet>
+                    <iamInstanceProfile>
+                        <arn>arn:aws:iam::231871078230:instance-profile/JenkinsEC2Role</arn>
+                        <id>AIPAJLHDH555WLDP2UO5M</id>
+                    </iamInstanceProfile>
+                    <ebsOptimized>false</ebsOptimized>
+                    <enaSupport>true</enaSupport>
+                </item>
+            </instancesSet>
+        </item>
+    </reservationSet>
+</DescribeInstancesResponse>
+2018-02-28 08:57:10,023 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x4119850>
+2018-02-28 08:57:10,024 = DEBUG: No retry needed.
+2018-02-28 08:57:10,024 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:10,027 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:10,033 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:10,033 = INFO: Deleting instance i-05eaa6e3e0a553488 
+2018-02-28 08:57:10,034 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:10,034 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:10,034 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:10,034 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:10,038 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:10,038 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:10,040 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:10,040 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:10,041 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:10,045 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:10,045 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:10,046 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:10,046 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:10,046 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.ap-northeast-2.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'ap-northeast-2', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x434a890>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:10,046 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x3ff40d0>>
+2018-02-28 08:57:10,047 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:10,047 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:10,047 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.ap-northeast-2.amazonaws.com
+x-amz-date:20180228T085710Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:10,047 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085710Z
+20180228/ap-northeast-2/ec2/aws4_request
+e01ff25aed1c07429fbd33a78ba70e2ddd8d080101c2fa76cea947afce430417
+2018-02-28 08:57:10,047 = DEBUG: Signature:
+c519b4f3e30c9a4b179e8ad61bd8b8be33a3df423e038c299da9708abea8de46
+2018-02-28 08:57:10,048 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:10,048 = INFO: Starting new HTTPS connection (1): ec2.ap-northeast-2.amazonaws.com
+2018-02-28 08:57:11,615 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:11,615 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:10 GMT'}
+2018-02-28 08:57:11,615 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>353fe42f-83f8-49b8-9ac7-1b9b134a94a7</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:11,616 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x4354810>
+2018-02-28 08:57:11,616 = DEBUG: No retry needed.
+2018-02-28 08:57:11,616 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:11,618 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:11,622 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:11,623 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:11,623 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:11,623 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:11,623 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:11,628 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:11,628 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:11,630 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:11,631 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:11,631 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:11,635 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:11,636 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:11,637 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:11,637 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:11,638 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.ap-northeast-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'ap-northeast-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x4571510>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:11,638 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x436e210>>
+2018-02-28 08:57:11,638 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:11,638 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:11,638 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.ap-northeast-1.amazonaws.com
+x-amz-date:20180228T085711Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:11,638 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085711Z
+20180228/ap-northeast-1/ec2/aws4_request
+5c187b34dadd22909536eefd8ae17c539b49d3c0c6e84be2a079ac242024c45c
+2018-02-28 08:57:11,639 = DEBUG: Signature:
+83d7e05bc62a93e6110058ba280aa4f57bbd83f901ad763b910cb1d0e7a702e6
+2018-02-28 08:57:11,639 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:11,639 = INFO: Starting new HTTPS connection (1): ec2.ap-northeast-1.amazonaws.com
+2018-02-28 08:57:13,050 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:13,051 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:12 GMT'}
+2018-02-28 08:57:13,051 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>a15de170-621b-4b90-9e20-f2c76783426a</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:13,052 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x457b490>
+2018-02-28 08:57:13,052 = DEBUG: No retry needed.
+2018-02-28 08:57:13,052 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:13,055 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:13,059 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:13,060 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:13,060 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:13,060 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:13,060 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:13,067 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:13,067 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:13,069 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:13,071 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:13,071 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:13,076 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:13,077 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:13,078 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:13,078 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:13,078 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.sa-east-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'sa-east-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x473aa50>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:13,078 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x434ac10>>
+2018-02-28 08:57:13,079 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:13,079 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:13,079 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.sa-east-1.amazonaws.com
+x-amz-date:20180228T085713Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:13,079 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085713Z
+20180228/sa-east-1/ec2/aws4_request
+f6be83a86ca1c23b3e6c9fc3ffe1e875a29a3ab4d31000f942d8eee8d42a82a7
+2018-02-28 08:57:13,079 = DEBUG: Signature:
+f64bd3b4df7a9bd97594480a9a4dd6912d352998941ac97c17138c2ad3a8b2c4
+2018-02-28 08:57:13,080 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:13,080 = INFO: Starting new HTTPS connection (1): ec2.sa-east-1.amazonaws.com
+2018-02-28 08:57:14,230 = DEBUG: "POST / HTTP/1.1" 200 230
+2018-02-28 08:57:14,231 = DEBUG: Response headers: {'date': 'Wed, 28 Feb 2018 08:57:13 GMT', 'content-length': '230', 'content-type': 'text/xml;charset=UTF-8', 'server': 'AmazonEC2'}
+2018-02-28 08:57:14,231 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>9e0a1b07-37b5-4d65-97ea-81d53648a9d0</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:14,231 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x47439d0>
+2018-02-28 08:57:14,232 = DEBUG: No retry needed.
+2018-02-28 08:57:14,232 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:14,234 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:14,236 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:14,237 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:14,237 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:14,237 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:14,237 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:14,243 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:14,243 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:14,245 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:14,246 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:14,246 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:14,250 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:14,252 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:14,253 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:14,253 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:14,253 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.ca-central-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'ca-central-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x486bb50>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:14,254 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x486bad0>>
+2018-02-28 08:57:14,254 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:14,254 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:14,254 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.ca-central-1.amazonaws.com
+x-amz-date:20180228T085714Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:14,254 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085714Z
+20180228/ca-central-1/ec2/aws4_request
+59ecd7fb24eaf07fd3eef70ee8b2e0dcb8ca1784afaee0af955e87bf843cacbd
+2018-02-28 08:57:14,255 = DEBUG: Signature:
+a89acd7160df39a4c9c50ecd29ca640e385b9c9ce005d95c9652737c2a02894f
+2018-02-28 08:57:14,255 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:14,255 = INFO: Starting new HTTPS connection (1): ec2.ca-central-1.amazonaws.com
+2018-02-28 08:57:14,880 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:14,880 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:13 GMT'}
+2018-02-28 08:57:14,880 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>cac46fa6-3e8d-441c-8461-b5eede9cddbf</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:14,881 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x486da90>
+2018-02-28 08:57:14,881 = DEBUG: No retry needed.
+2018-02-28 08:57:14,881 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:14,883 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:14,887 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:14,887 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:14,887 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:14,887 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:14,887 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:14,893 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:14,893 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:14,895 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:14,895 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:14,896 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:14,904 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:14,907 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:14,908 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:14,909 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:14,910 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.ap-southeast-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'ap-southeast-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x49a5c50>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:14,910 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x473a990>>
+2018-02-28 08:57:14,910 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:14,911 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:14,911 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.ap-southeast-1.amazonaws.com
+x-amz-date:20180228T085714Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:14,911 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085714Z
+20180228/ap-southeast-1/ec2/aws4_request
+e9229eef1c6787bd6a598a82c9842159559eb83360fae245829e4be88efa4f46
+2018-02-28 08:57:14,912 = DEBUG: Signature:
+691103f1f2931dc66c239a46076480878ae4696216605fd52c7938b67c01580c
+2018-02-28 08:57:14,912 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:14,913 = INFO: Starting new HTTPS connection (1): ec2.ap-southeast-1.amazonaws.com
+2018-02-28 08:57:16,071 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:16,072 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:15 GMT'}
+2018-02-28 08:57:16,072 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>edbc103a-c989-47d1-90fb-f3e40d37a0b5</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:16,073 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x49b1bd0>
+2018-02-28 08:57:16,073 = DEBUG: No retry needed.
+2018-02-28 08:57:16,073 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:16,077 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:16,081 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:16,082 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:16,082 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:16,082 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:16,082 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:16,090 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:16,090 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:16,092 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:16,094 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:16,094 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:16,105 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:16,110 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:16,111 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:16,112 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:16,115 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.ap-southeast-2.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'ap-southeast-2', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x4b6cd50>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:16,115 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x486d350>>
+2018-02-28 08:57:16,115 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:16,115 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:16,115 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.ap-southeast-2.amazonaws.com
+x-amz-date:20180228T085716Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:16,116 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085716Z
+20180228/ap-southeast-2/ec2/aws4_request
+9fdf28d052a2527389b2a94e1a16bf9efcfda3155a0b506992639803ed530b2f
+2018-02-28 08:57:16,116 = DEBUG: Signature:
+b0687d1e647b1675dfb1c82c7606d141ba80f5a65a6383ef1e7d3f04b62eb486
+2018-02-28 08:57:16,116 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:16,116 = INFO: Starting new HTTPS connection (1): ec2.ap-southeast-2.amazonaws.com
+2018-02-28 08:57:17,481 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:17,482 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:16 GMT'}
+2018-02-28 08:57:17,482 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>82eafe70-ed6b-49e6-88f2-76e4b8dfbbf8</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:17,482 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x4b76cd0>
+2018-02-28 08:57:17,482 = DEBUG: No retry needed.
+2018-02-28 08:57:17,483 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:17,484 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:17,487 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:17,487 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:17,488 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:17,488 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:17,488 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:17,492 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:17,492 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:17,493 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:17,494 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:17,495 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:17,501 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:17,503 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:17,504 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:17,505 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:17,505 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.eu-central-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'eu-central-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x4c95e90>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:17,505 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x4c95e10>>
+2018-02-28 08:57:17,505 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:17,506 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:17,506 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.eu-central-1.amazonaws.com
+x-amz-date:20180228T085717Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:17,506 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085717Z
+20180228/eu-central-1/ec2/aws4_request
+e51e7518b7f23c1569f59c85ae6ecc1b2a364bf6170aaba35865c1228160aeaf
+2018-02-28 08:57:17,506 = DEBUG: Signature:
+d297d0b52b785fe8b6fa069e387ab943df5b9b58ebb2e307d3d8b17a29765f45
+2018-02-28 08:57:17,507 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:17,507 = INFO: Starting new HTTPS connection (1): ec2.eu-central-1.amazonaws.com
+2018-02-28 08:57:17,686 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:17,687 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:16 GMT'}
+2018-02-28 08:57:17,687 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>a71b30cf-d554-451b-96c4-fba4573096f5</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:17,687 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x4c9fdd0>
+2018-02-28 08:57:17,687 = DEBUG: No retry needed.
+2018-02-28 08:57:17,688 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:17,690 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:17,764 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:17,765 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:17,765 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:17,765 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:17,765 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:17,771 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:17,771 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:17,774 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:17,775 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:17,776 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:17,782 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:17,784 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:17,784 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:17,785 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:17,785 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.us-east-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'us-east-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x49b45d0>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:17,785 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x49b43d0>>
+2018-02-28 08:57:17,785 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:17,786 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:17,786 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.us-east-1.amazonaws.com
+x-amz-date:20180228T085717Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:17,786 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085717Z
+20180228/us-east-1/ec2/aws4_request
+3e431f46989e9bdf20331048419cab911cd013249692da53730f48adcc738c3a
+2018-02-28 08:57:17,786 = DEBUG: Signature:
+d7da179ccd56a4b441e2362010299de42723100fd8ba902597f420d47d6dfb5c
+2018-02-28 08:57:17,787 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:17,787 = INFO: Starting new HTTPS connection (1): ec2.us-east-1.amazonaws.com
+2018-02-28 08:57:18,329 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:18,329 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:17 GMT'}
+2018-02-28 08:57:18,330 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>c25b7be9-97bc-4c4f-a498-fac6f866a4c4</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:18,330 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x497d990>
+2018-02-28 08:57:18,330 = DEBUG: No retry needed.
+2018-02-28 08:57:18,331 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:18,332 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:18,335 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:18,336 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:18,336 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:18,336 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:18,336 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:18,342 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:18,342 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:18,344 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:18,345 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:18,345 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:18,350 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:18,352 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:18,353 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:18,354 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:18,354 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.us-east-2.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'us-east-2', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x3e14150>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:18,354 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x3e14650>>
+2018-02-28 08:57:18,354 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:18,355 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:18,355 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.us-east-2.amazonaws.com
+x-amz-date:20180228T085718Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:18,355 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085718Z
+20180228/us-east-2/ec2/aws4_request
+3ba8295d498d2f64e7bb3ca5870aef758da5c3b3724d6cd7aa70d39fe0512c72
+2018-02-28 08:57:18,355 = DEBUG: Signature:
+504890be183b0d449e2348786926b10087fec0d2b92f47c1a6e12f68a8f14859
+2018-02-28 08:57:18,356 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:18,356 = INFO: Starting new HTTPS connection (1): ec2.us-east-2.amazonaws.com
+2018-02-28 08:57:18,924 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:18,926 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:18 GMT'}
+2018-02-28 08:57:18,927 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>7b3002e3-b47f-467a-a9fb-45b1ec6fa124</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:18,928 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x3c17750>
+2018-02-28 08:57:18,929 = DEBUG: No retry needed.
+2018-02-28 08:57:18,929 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:18,934 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:18,939 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:18,940 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:18,940 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:18,940 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:18,940 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:18,947 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:18,948 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:18,949 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:18,951 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:18,951 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:18,955 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:18,956 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:18,957 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:18,958 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:18,958 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.us-west-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'us-west-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x3c0cbd0>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:18,958 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x497d610>>
+2018-02-28 08:57:18,958 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:18,959 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:18,959 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.us-west-1.amazonaws.com
+x-amz-date:20180228T085718Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:18,959 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085718Z
+20180228/us-west-1/ec2/aws4_request
+7b0d4b54a41c5d431edb94ca2d7fe891b5cf4c89e6c9ba3c813ed531f4a1525d
+2018-02-28 08:57:18,959 = DEBUG: Signature:
+65ad9a68674d7d340d30cf5bd9c5547aeaf60bef977750809c4a96da14d9df80
+2018-02-28 08:57:18,959 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:18,960 = INFO: Starting new HTTPS connection (1): ec2.us-west-1.amazonaws.com
+2018-02-28 08:57:19,710 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:19,711 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:19 GMT'}
+2018-02-28 08:57:19,711 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>be2fb5dc-5f58-4caf-9006-ae994c0b68ed</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:19,711 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x3c0e810>
+2018-02-28 08:57:19,712 = DEBUG: No retry needed.
+2018-02-28 08:57:19,712 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:19,714 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:19,718 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>
+2018-02-28 08:57:19,719 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:19,719 = DEBUG: Loading variable ca_bundle from defaults.
+2018-02-28 08:57:19,719 = DEBUG: Loading variable profile from defaults.
+2018-02-28 08:57:19,719 = DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x23fdc80>
+2018-02-28 08:57:19,725 = DEBUG: Event creating-client-class.ec2: calling handler <function add_generate_presigned_url at 0x23d41b8>
+2018-02-28 08:57:19,725 = DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-02-28 08:57:19,727 = DEBUG: Setting ec2 timeout as (60, 60)
+2018-02-28 08:57:19,728 = DEBUG: Registering retry handlers for service: ec2
+2018-02-28 08:57:19,729 = DEBUG: Loading ec2:ec2
+2018-02-28 08:57:19,738 = DEBUG: Event creating-resource-class.ec2.ServiceResource: calling handler <function _handler at 0x24847d0>
+2018-02-28 08:57:19,741 = DEBUG: Calling paginated ec2:describe_instances with {'Filters': [{'Values': ['running', 'stopped'], 'Name': 'instance-state-name'}]}
+2018-02-28 08:57:19,744 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x240e3d0>>
+2018-02-28 08:57:19,747 = DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23fded8>
+2018-02-28 08:57:19,748 = DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', u'Filter.1.Value.2': 'stopped', u'Filter.1.Value.1': 'running', 'Version': u'2016-11-15', u'Filter.1.Name': 'instance-state-name'}, 'url': u'https://ec2.us-west-2.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34 Resource'}, 'context': {'auth_type': None, 'client_region': 'us-west-2', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x4a68290>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
+2018-02-28 08:57:19,748 = DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x3e14690>>
+2018-02-28 08:57:19,749 = DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23fdde8>
+2018-02-28 08:57:19,750 = DEBUG: Calculating signature using v4 auth.
+2018-02-28 08:57:19,750 = DEBUG: CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:ec2.us-west-2.amazonaws.com
+x-amz-date:20180228T085719Z
+
+content-type;host;x-amz-date
+bd013e530037a41eb7353e8084aa5c1ed5e45586b800bc791b768540e3aea1e7
+2018-02-28 08:57:19,750 = DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180228T085719Z
+20180228/us-west-2/ec2/aws4_request
+b233c314a0e5e115ae60110b7e65022ac9b536c67e0b8291fcd2b3a977322b1b
+2018-02-28 08:57:19,750 = DEBUG: Signature:
+a72655df53c1feaaa442490aeb44f5093a0c1660364df35e5529781b95bd30bc
+2018-02-28 08:57:19,751 = DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-02-28 08:57:19,752 = INFO: Starting new HTTPS connection (1): ec2.us-west-2.amazonaws.com
+2018-02-28 08:57:20,689 = DEBUG: "POST / HTTP/1.1" 200 None
+2018-02-28 08:57:20,691 = DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Wed, 28 Feb 2018 08:57:20 GMT'}
+2018-02-28 08:57:20,692 = DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>15fd0117-670f-49ec-826e-b5c1cf4061d7</requestId>
+    <reservationSet/>
+</DescribeInstancesResponse>
+2018-02-28 08:57:20,693 = DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x4a62210>
+2018-02-28 08:57:20,694 = DEBUG: No retry needed.
+2018-02-28 08:57:20,694 = DEBUG: Loading ec2:Instance
+2018-02-28 08:57:20,701 = DEBUG: Renaming Instance attribute network_interfaces
+2018-02-28 08:57:20,708 = DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x2484848>

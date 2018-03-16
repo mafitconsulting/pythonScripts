@@ -27,6 +27,31 @@ def disableAPIProtection(instance):
 def main():
 
     import logging
+    from boto.s3.connection import S3Connection
+    from boto.sts import STSConnection
+
+    # Prompt for token code
+    mfa = raw_input("Enter the mfa authcode for ec2-dev: ")
+
+    #
+    sts_connection = STSConnection()
+
+    # Use the appropriate device ID (serial number for hardware device or ARN for virtual device).
+    # Replace ACCOUNT-NUMBER-WITHOUT-HYPHENS and MFA-DEVICE-ID with appropriate values.
+
+    tempCredentials = sts_connection.get_session_token(
+        duration=3600,
+        mfa_serial_number="arn:aws:iam::231871078230:mfa/ec2-dev",
+        mfa_token=mfa
+    )
+
+    # Use the temporary credentials to list the contents of an S3 bucket
+    s3_connection = S3Connection(
+        aws_access_key_id=tempCredentials.access_key,
+        aws_secret_access_key=tempCredentials.secret_key,
+        security_token=tempCredentials.session_token
+    )
+
 
     # Set up logging
     logging.basicConfig(filename='ec2-termination.log',
@@ -37,7 +62,7 @@ def main():
     ec2_regions = [region['RegionName'] for region in client.describe_regions()['Regions']]
 
     # tag values to ignore
-    tag_value = ['openshift-node','JenkinsBuildServer','openshift-master']
+    tag_value = ['openshift-node','openshift-master']
 
     for region in ec2_regions:
         #sets current working region

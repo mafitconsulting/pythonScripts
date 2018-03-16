@@ -13,6 +13,3 @@ class Credentials():
             password = item['password']
             server = item['server']
             return (user, password, server)
-
-creds = Credentials('config.yaml')
-print (creds.getCreds())
