@@ -1,6 +1,7 @@
 #!/bin/python
 
 import sys
+import os
 import click
 import boto3
 import botocore
@@ -9,7 +10,7 @@ import json
 @click.command()
 @click.option('--user', metavar='<USERNAME>', required=True,
                        help='The name of the user to create.')
-@click.option('--mfa', metavar=' <TOKENID>', prompt='Enter the mfa authcode for ec2-dev: ',
+@click.option('--mfa', metavar=' <TOKENID>', prompt='Enter the mfa authcode for ec2-dev ',
                        help='MFA code to authenticate.')
 
 def create_user(user, mfa):
@@ -73,11 +74,18 @@ def create_user(user, mfa):
                 sys.exit(1)
 
 def console_access(user):
+    click.echo("Creating console access for %s" % user)
+    logging.info("Creating console access for %s" % user)
+
     try:
-        login_profile = user.create_login_profile(
-            Password=pw_generator()
+        login_profile = iam.create_login_profile(
+            UserName=user,
+            Password=pw_generator(),
             PasswordResetRequired=True
         )
+
+        print(json.dumps(login_profile, indent=4, default=str))
+
     except botocore.exceptions.ClientError as e:
         logging.error(e.response['Error']['Code'])
         click.echo("Exception Caught: %s" % e)
@@ -87,6 +95,8 @@ def configure_mfa(user):
 
 def attach_policy(user, policy):
     click.echo ("Attaching user policy %s to %s" % (policy, user))
+    logging.info("Attaching user policy %s to %s" % (policy, user))
+
     try:
         response = iam.attach_user_policy(
             PolicyArn=policy,
@@ -98,6 +108,9 @@ def attach_policy(user, policy):
 
 
 def programmatic_access(user):
+    click.echo("Creating programmatic access for %s" % user)
+    logging.info("Creating programmatic access for %s" % user)
+
     try:
         response = iam.create_access_key(
             UserName=user
@@ -106,16 +119,17 @@ def programmatic_access(user):
         logging.error(e.response['Error']['Code'])
         click.echo("Exception Caught: %s" % e)
     else:
+        access_key_id = response['AccessKey']['AccessKeyId']
         secret_key = response['AccessKey']['SecretAccessKey']
-        cred_file = os.path.join('credentials','_',user + '.csv')
+        cred_file = 'credentials_' + user + '.csv'
         try:
             f = open (cred_file,'w')
         except IOError as err:
-            click.echo ("Cannot write to file %s, error: %s" % (f, err))
+            click.echo ("Cannot write to file! Error %s" %  err)
         else:
             with f:
                 f.write( 'AccessID,' + access_key_id + '\n' \
-                         'SecretKey' + secret_key)
+                         'SecretKey,' + secret_key)
 
 
 def pw_generator():
@@ -125,16 +139,17 @@ def pw_generator():
     length = 10
     pwlist = []
 
-    for i in range(pw_len//3):
+    for i in range(length//3):
         pwlist.append(characters[random.randrange(len(characters))])
         pwlist.append(upperchars[random.randrange(len(upperchars))])
         pwlist.append(str(random.randrange(10)))
 
-    for i in range(pw_len-len(pwlist)):
+    for i in range(length-len(pwlist)):
         pwlist.append(characters[random.randrange(len(characters))])
 
     random.shuffle(pwlist)
     pwstring = "".join(pwlist)
+    print (pwstring)
     return pwstring
 
 
