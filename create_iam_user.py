@@ -57,7 +57,7 @@ def create_user(user, mfa):
                 else:
                     print(json.dumps(response, indent=4, default=str))
                     attach_policy(user,policy)
-                    # dispatch directionary
+                    # dispatch dictionary
                     dispatch_dict = {
                        'programmatic': programmatic_access,
                        'console' :  console_access,
