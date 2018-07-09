@@ -88,25 +88,28 @@ def upload_object(bucket_name):
         logging.error(e.response['Error']['Code'])
 
 def mpupload(bucket_name,file):
-    # Initiate the multipart upload and send the part(s)
-    s3 = boto3.client('s3')
-    mpu = s3.create_multipart_upload(Bucket=bucket_name,Key=file)
-    part1 = s3.upload_part(Bucket=bucket_name, Key=file, PartNumber=1,
-                           UploadId=mpu['UploadId'], Body='Testfile')
-    # Next, we need to gather information about each part to complete
-    # the upload. Needed are the part number and ETag.
-    part_info = {
-                'Parts': [
-                            {
-                              'PartNumber': 1,
-                              'ETag': part1['ETag']
-                            }
-                         ]
-                }
-    # Now the upload works!
-    s3.complete_multipart_upload(Bucket=bucket_name, Key=file, UploadId=mpu['UploadId'],
-                                 MultipartUpload=part_info)
 
+    # Initiate the multipart upload and send the part(s
+    s3 = boto3.client('s3')
+    try:
+        mpu = s3.create_multipart_upload(Bucket=bucket_name,Key=file)
+        part1 = s3.upload_part(Bucket=bucket_name, Key=file, PartNumber=1,
+                           UploadId=mpu['UploadId'], Body='Testfile')
+        # Next, we need to gather information about each part to complete
+        # the upload. Needed are the part number and ETag.
+        part_info = {
+                    'Parts': [
+                                {
+                                  'PartNumber': 1,
+                                  'ETag': part1['ETag']
+                                }
+                             ]
+                    }
+        # Now the upload works!
+        s3.complete_multipart_upload(Bucket=bucket_name, Key=file, UploadId=mpu['UploadId'],
+                                 MultipartUpload=part_info)
+    except botocore.exceptions.ClientError as e:
+        logging.error(e.response['Error']['Code'])
 
 def list_buckets():
     try:
@@ -140,7 +143,7 @@ if __name__ == '__main__':
     # Sets up logging
     logging.basicConfig(filename='aws_s3.log',
                         format = '%(asctime)s - %(levelname)s: %(message)s',
-                        level=logging.ERROR)
+                        level=logging.DEBUG)
 
     # Sets resource s3 for use
     s3 = boto3.resource('s3')

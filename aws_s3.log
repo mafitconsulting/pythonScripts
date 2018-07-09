@@ -1,363 +1,173 @@
-2018-01-31 19:50:00,780 - ERROR: BucketAlreadyExists
-2018-01-31 19:50:47,593 - ERROR: BucketAlreadyExists
-2018-02-10 16:51:50,398 - INFO: Checking for instances.....
-2018-02-10 16:51:50,401 - DEBUG: Loading JSON file: /home/user/.local/lib/python2.7/site-packages/botocore/data/ec2/2016-11-15/paginators-1.json
-2018-02-10 16:51:50,401 - DEBUG: Calling paginated ec2:describe_instances with {}
-2018-02-10 16:51:50,402 - DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <bound method ParameterAlias.alias_parameter_in_call of <botocore.handlers.ParameterAlias object at 0x23b6050>>
-2018-02-10 16:51:50,402 - DEBUG: Event before-parameter-build.ec2.DescribeInstances: calling handler <function generate_idempotent_uuid at 0x23b20c8>
-2018-02-10 16:51:50,402 - DEBUG: Making request for OperationModel(name=DescribeInstances) (verify_ssl=True) with params: {'body': {'Action': u'DescribeInstances', 'Version': u'2016-11-15'}, 'url': u'https://ec2.eu-west-1.amazonaws.com/', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.5.22 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.36 Resource'}, 'context': {'auth_type': None, 'client_region': 'eu-west-1', 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x358e2d0>}, 'query_string': '', 'url_path': '/', 'method': u'POST'}
-2018-02-10 16:51:50,403 - DEBUG: Event request-created.ec2.DescribeInstances: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x358e210>>
-2018-02-10 16:51:50,403 - DEBUG: Event choose-signer.ec2.DescribeInstances: calling handler <function set_operation_specific_signer at 0x23b1f50>
-2018-02-10 16:51:50,403 - DEBUG: Calculating signature using v4 auth.
-2018-02-10 16:51:50,403 - DEBUG: CanonicalRequest:
+2018-06-16 10:59:03,532 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,532 - DEBUG: Loading variable config_file from defaults.
+2018-06-16 10:59:03,532 - DEBUG: Loading variable credentials_file from defaults.
+2018-06-16 10:59:03,533 - DEBUG: Loading variable data_path from defaults.
+2018-06-16 10:59:03,536 - DEBUG: Loading JSON file: /usr/lib/python2.7/site-packages/boto3/data/s3/2006-03-01/resources-1.json
+2018-06-16 10:59:03,542 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,542 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,542 - DEBUG: Loading variable region from config file with value 'eu-west-1'.
+2018-06-16 10:59:03,542 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,542 - DEBUG: Loading variable ca_bundle from defaults.
+2018-06-16 10:59:03,543 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,543 - DEBUG: Loading variable credentials_file from defaults.
+2018-06-16 10:59:03,543 - DEBUG: Loading variable config_file from defaults.
+2018-06-16 10:59:03,543 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,543 - DEBUG: Loading variable metadata_service_timeout from defaults.
+2018-06-16 10:59:03,543 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,543 - DEBUG: Loading variable metadata_service_num_attempts from defaults.
+2018-06-16 10:59:03,547 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,547 - DEBUG: Looking for credentials via: env
+2018-06-16 10:59:03,547 - DEBUG: Looking for credentials via: assume-role
+2018-06-16 10:59:03,547 - DEBUG: Looking for credentials via: shared-credentials-file
+2018-06-16 10:59:03,548 - INFO: Found credentials in shared credentials file: ~/.aws/credentials
+2018-06-16 10:59:03,549 - DEBUG: Loading JSON file: /usr/lib/python2.7/site-packages/botocore/data/endpoints.json
+2018-06-16 10:59:03,564 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,564 - DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x2842d70>
+2018-06-16 10:59:03,568 - DEBUG: Loading JSON file: /usr/lib/python2.7/site-packages/botocore/data/s3/2006-03-01/service-2.json
+2018-06-16 10:59:03,598 - DEBUG: Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x2818488>
+2018-06-16 10:59:03,599 - DEBUG: Event creating-client-class.s3: calling handler <function _handler at 0x28c5b90>
+2018-06-16 10:59:03,606 - DEBUG: Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x28182a8>
+2018-06-16 10:59:03,607 - DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-06-16 10:59:03,609 - DEBUG: Setting s3 timeout as (60, 60)
+2018-06-16 10:59:03,609 - DEBUG: Loading JSON file: /usr/lib/python2.7/site-packages/botocore/data/_retry.json
+2018-06-16 10:59:03,611 - DEBUG: Registering retry handlers for service: s3
+2018-06-16 10:59:03,611 - DEBUG: Defaulting to S3 virtual host style addressing with path style addressing fallback.
+2018-06-16 10:59:03,611 - DEBUG: Loading s3:s3
+2018-06-16 10:59:03,613 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,613 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,613 - DEBUG: Loading variable region from config file with value 'eu-west-1'.
+2018-06-16 10:59:03,613 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,613 - DEBUG: Loading variable ca_bundle from defaults.
+2018-06-16 10:59:03,613 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,613 - DEBUG: Loading variable api_versions from defaults.
+2018-06-16 10:59:03,613 - DEBUG: Loading variable profile from defaults.
+2018-06-16 10:59:03,613 - DEBUG: Event choose-service-name: calling handler <function handle_service_name_alias at 0x2842d70>
+2018-06-16 10:59:03,617 - DEBUG: Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x2818488>
+2018-06-16 10:59:03,617 - DEBUG: Event creating-client-class.s3: calling handler <function _handler at 0x28c5b90>
+2018-06-16 10:59:03,617 - DEBUG: Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x28182a8>
+2018-06-16 10:59:03,617 - DEBUG: The s3 config key is not a dictionary type, ignoring its value of: None
+2018-06-16 10:59:03,619 - DEBUG: Setting s3 timeout as (60, 60)
+2018-06-16 10:59:03,620 - DEBUG: Registering retry handlers for service: s3
+2018-06-16 10:59:03,620 - DEBUG: Defaulting to S3 virtual host style addressing with path style addressing fallback.
+2018-06-16 10:59:03,620 - DEBUG: Event before-parameter-build.s3.CreateMultipartUpload: calling handler <function validate_ascii_metadata at 0x284ee60>
+2018-06-16 10:59:03,620 - DEBUG: Event before-parameter-build.s3.CreateMultipartUpload: calling handler <function sse_md5 at 0x284e410>
+2018-06-16 10:59:03,620 - DEBUG: Event before-parameter-build.s3.CreateMultipartUpload: calling handler <function validate_bucket_name at 0x284e398>
+2018-06-16 10:59:03,620 - DEBUG: Event before-parameter-build.s3.CreateMultipartUpload: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x3188490>>
+2018-06-16 10:59:03,620 - DEBUG: Event before-parameter-build.s3.CreateMultipartUpload: calling handler <function generate_idempotent_uuid at 0x284e050>
+2018-06-16 10:59:03,622 - DEBUG: Event before-call.s3.CreateMultipartUpload: calling handler <function add_expect_header at 0x284e7d0>
+2018-06-16 10:59:03,622 - DEBUG: Event before-call.s3.CreateMultipartUpload: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x3188490>>
+2018-06-16 10:59:03,622 - DEBUG: Making request for OperationModel(name=CreateMultipartUpload) (verify_ssl=True) with params: {'body': '', 'url': u'https://s3.eu-west-1.amazonaws.com/mafit-openshift/multipart.tar.gz?uploads', 'headers': {'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34'}, 'context': {'auth_type': None, 'client_region': 'eu-west-1', 'signing': {'bucket': 'mafit-openshift'}, 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x30d5490>}, 'query_string': {}, 'url_path': u'/mafit-openshift/multipart.tar.gz?uploads', 'method': u'POST'}
+2018-06-16 10:59:03,622 - DEBUG: Event request-created.s3.CreateMultipartUpload: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x30d5410>>
+2018-06-16 10:59:03,622 - DEBUG: Event choose-signer.s3.CreateMultipartUpload: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x2fa36d0>>
+2018-06-16 10:59:03,622 - DEBUG: Event choose-signer.s3.CreateMultipartUpload: calling handler <function set_operation_specific_signer at 0x2842ed8>
+2018-06-16 10:59:03,622 - DEBUG: Event before-sign.s3.CreateMultipartUpload: calling handler <function fix_s3_host at 0x25fd2a8>
+2018-06-16 10:59:03,623 - DEBUG: Calculating signature using v4 auth.
+2018-06-16 10:59:03,623 - DEBUG: CanonicalRequest:
 POST
-/
+/mafit-openshift/multipart.tar.gz
+uploads=
+host:s3.eu-west-1.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20180616T095903Z
 
-content-type:application/x-www-form-urlencoded; charset=utf-8
-host:ec2.eu-west-1.amazonaws.com
-x-amz-date:20180210T165150Z
-
-content-type;host;x-amz-date
-6171eb09865e32b0602af0f7957e26573a51f53caaedff02ff88883cb0275885
-2018-02-10 16:51:50,404 - DEBUG: StringToSign:
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2018-06-16 10:59:03,623 - DEBUG: StringToSign:
 AWS4-HMAC-SHA256
-20180210T165150Z
-20180210/eu-west-1/ec2/aws4_request
-9e28688e816f9179ffb57df6e91adba5543ba1375daa0bf9a32c3223dacdc881
-2018-02-10 16:51:50,404 - DEBUG: Signature:
-4e886c34ddd9990380f0b1ee9b811046259466d1020cf7b83fadc7292c24d722
-2018-02-10 16:51:50,409 - DEBUG: Sending http request: <PreparedRequest [POST]>
-2018-02-10 16:51:50,409 - INFO: Starting new HTTPS connection (1): ec2.eu-west-1.amazonaws.com
-2018-02-10 16:51:50,555 - DEBUG: "POST / HTTP/1.1" 200 None
-2018-02-10 16:51:50,556 - DEBUG: Response headers: {'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding', 'server': 'AmazonEC2', 'content-type': 'text/xml;charset=UTF-8', 'date': 'Sat, 10 Feb 2018 16:51:50 GMT'}
-2018-02-10 16:51:50,556 - DEBUG: Response body:
+20180616T095903Z
+20180616/eu-west-1/s3/aws4_request
+f32e5f35b2769d0c9a105f476a30414514a245423ca0e2e23e05b4f8528b14ce
+2018-06-16 10:59:03,623 - DEBUG: Signature:
+e1b459f2b3e1d8487194bd0be8f2ba48f9f76c5f8e2f4edf516ab76b199b58b8
+2018-06-16 10:59:03,628 - DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-06-16 10:59:03,628 - INFO: Starting new HTTPS connection (1): s3.eu-west-1.amazonaws.com
+2018-06-16 10:59:04,349 - DEBUG: "POST /mafit-openshift/multipart.tar.gz?uploads HTTP/1.1" 200 None
+2018-06-16 10:59:04,355 - DEBUG: Response headers: {'x-amz-id-2': 'jZUcLDle7RcVjwfH5chm7xHJ1A+dxa/xfQDCPGecr0JvXANxUyIpMNF87s+KDRNxpfoXlSH/OeU=', 'date': 'Sat, 16 Jun 2018 09:59:05 GMT', 'transfer-encoding': 'chunked', 'x-amz-request-id': '1FA8670CA2491849', 'server': 'AmazonS3'}
+2018-06-16 10:59:04,356 - DEBUG: Response body:
 <?xml version="1.0" encoding="UTF-8"?>
-<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
-    <requestId>9f817ac1-67a5-4a64-b77f-87f57a52aec8</requestId>
-    <reservationSet>
-        <item>
-            <reservationId>r-0dc9bee578b57a443</reservationId>
-            <ownerId>231871078230</ownerId>
-            <groupSet/>
-            <instancesSet>
-                <item>
-                    <instanceId>i-0a8f2a23ecef36b6a</instanceId>
-                    <imageId>ami-c90195b0</imageId>
-                    <instanceState>
-                        <code>80</code>
-                        <name>stopped</name>
-                    </instanceState>
-                    <privateDnsName>ip-172-31-27-19.eu-west-1.compute.internal</privateDnsName>
-                    <dnsName/>
-                    <reason>User initiated (2018-02-09 08:21:00 GMT)</reason>
-                    <keyName>mafit</keyName>
-                    <amiLaunchIndex>0</amiLaunchIndex>
-                    <productCodes/>
-                    <instanceType>t2.micro</instanceType>
-                    <launchTime>2018-02-07T18:55:04.000Z</launchTime>
-                    <placement>
-                        <availabilityZone>eu-west-1c</availabilityZone>
-                        <groupName/>
-                        <tenancy>default</tenancy>
-                    </placement>
-                    <monitoring>
-                        <state>disabled</state>
-                    </monitoring>
-                    <subnetId>subnet-d3f41ca5</subnetId>
-                    <vpcId>vpc-68fde40d</vpcId>
-                    <privateIpAddress>172.31.27.19</privateIpAddress>
-                    <sourceDestCheck>true</sourceDestCheck>
-                    <groupSet>
-                        <item>
-                            <groupId>sg-5ce83e26</groupId>
-                            <groupName>openshift</groupName>
-                        </item>
-                    </groupSet>
-                    <stateReason>
-                        <code>Client.UserInitiatedShutdown</code>
-                        <message>Client.UserInitiatedShutdown: User initiated shutdown</message>
-                    </stateReason>
-                    <architecture>x86_64</architecture>
-                    <rootDeviceType>ebs</rootDeviceType>
-                    <rootDeviceName>/dev/sda1</rootDeviceName>
-                    <blockDeviceMapping>
-                        <item>
-                            <deviceName>/dev/sda1</deviceName>
-                            <ebs>
-                                <volumeId>vol-07d319ce4ec4fe6a2</volumeId>
-                                <status>attached</status>
-                                <attachTime>2018-02-07T18:55:05.000Z</attachTime>
-                                <deleteOnTermination>true</deleteOnTermination>
-                            </ebs>
-                        </item>
-                    </blockDeviceMapping>
-                    <virtualizationType>hvm</virtualizationType>
-                    <clientToken/>
-                    <tagSet>
-                        <item>
-                            <key>Name</key>
-                            <value>openshift-node</value>
-                        </item>
-                    </tagSet>
-                    <hypervisor>xen</hypervisor>
-                    <networkInterfaceSet>
-                        <item>
-                            <networkInterfaceId>eni-0bd63638</networkInterfaceId>
-                            <subnetId>subnet-d3f41ca5</subnetId>
-                            <vpcId>vpc-68fde40d</vpcId>
-                            <description/>
-                            <ownerId>231871078230</ownerId>
-                            <status>in-use</status>
-                            <macAddress>06:be:7a:75:45:42</macAddress>
-                            <privateIpAddress>172.31.27.19</privateIpAddress>
-                            <privateDnsName>ip-172-31-27-19.eu-west-1.compute.internal</privateDnsName>
-                            <sourceDestCheck>true</sourceDestCheck>
-                            <groupSet>
-                                <item>
-                                    <groupId>sg-5ce83e26</groupId>
-                                    <groupName>openshift</groupName>
-                                </item>
-                            </groupSet>
-                            <attachment>
-                                <attachmentId>eni-attach-b24788c8</attachmentId>
-                                <deviceIndex>0</deviceIndex>
-                                <status>attached</status>
-                                <attachTime>2018-02-07T18:55:04.000Z</attachTime>
-                                <deleteOnTermination>true</deleteOnTermination>
-                            </attachment>
-                            <privateIpAddressesSet>
-                                <item>
-                                    <privateIpAddress>172.31.27.19</privateIpAddress>
-                                    <privateDnsName>ip-172-31-27-19.eu-west-1.compute.internal</privateDnsName>
-                                    <primary>true</primary>
-                                </item>
-                            </privateIpAddressesSet>
-                            <ipv6AddressesSet/>
-                        </item>
-                    </networkInterfaceSet>
-                    <ebsOptimized>false</ebsOptimized>
-                    <enaSupport>true</enaSupport>
-                </item>
-            </instancesSet>
-        </item>
-        <item>
-            <reservationId>r-0d1a029a244ede974</reservationId>
-            <ownerId>231871078230</ownerId>
-            <groupSet/>
-            <instancesSet>
-                <item>
-                    <instanceId>i-05eaa6e3e0a553488</instanceId>
-                    <imageId>ami-1a962263</imageId>
-                    <instanceState>
-                        <code>80</code>
-                        <name>stopped</name>
-                    </instanceState>
-                    <privateDnsName>ip-172-31-19-184.eu-west-1.compute.internal</privateDnsName>
-                    <dnsName/>
-                    <reason>User initiated (2018-02-07 18:52:29 GMT)</reason>
-                    <keyName>mafit</keyName>
-                    <amiLaunchIndex>0</amiLaunchIndex>
-                    <productCodes/>
-                    <instanceType>t2.micro</instanceType>
-                    <launchTime>2017-12-15T07:59:49.000Z</launchTime>
-                    <placement>
-                        <availabilityZone>eu-west-1c</availabilityZone>
-                        <groupName/>
-                        <tenancy>default</tenancy>
-                    </placement>
-                    <monitoring>
-                        <state>disabled</state>
-                    </monitoring>
-                    <subnetId>subnet-d3f41ca5</subnetId>
-                    <vpcId>vpc-68fde40d</vpcId>
-                    <privateIpAddress>172.31.19.184</privateIpAddress>
-                    <sourceDestCheck>true</sourceDestCheck>
-                    <groupSet>
-                        <item>
-                            <groupId>sg-c97703b2</groupId>
-                            <groupName>ec2-jenkins-group</groupName>
-                        </item>
-                    </groupSet>
-                    <stateReason>
-                        <code>Client.UserInitiatedShutdown</code>
-                        <message>Client.UserInitiatedShutdown: User initiated shutdown</message>
-                    </stateReason>
-                    <architecture>x86_64</architecture>
-                    <rootDeviceType>ebs</rootDeviceType>
-                    <rootDeviceName>/dev/xvda</rootDeviceName>
-                    <blockDeviceMapping>
-                        <item>
-                            <deviceName>/dev/xvda</deviceName>
-                            <ebs>
-                                <volumeId>vol-06fe0cc5a4be94cc2</volumeId>
-                                <status>attached</status>
-                                <attachTime>2017-12-06T07:31:19.000Z</attachTime>
-                                <deleteOnTermination>true</deleteOnTermination>
-                            </ebs>
-                        </item>
-                    </blockDeviceMapping>
-                    <virtualizationType>hvm</virtualizationType>
-                    <clientToken/>
-                    <tagSet>
-                        <item>
-                            <key>Name</key>
-                            <value>JenkinsBuildServer</value>
-                        </item>
-                    </tagSet>
-                    <hypervisor>xen</hypervisor>
-                    <networkInterfaceSet>
-                        <item>
-                            <networkInterfaceId>eni-4f0f9f7e</networkInterfaceId>
-                            <subnetId>subnet-d3f41ca5</subnetId>
-                            <vpcId>vpc-68fde40d</vpcId>
-                            <description/>
-                            <ownerId>231871078230</ownerId>
-                            <status>in-use</status>
-                            <macAddress>06:82:e4:4c:68:f2</macAddress>
-                            <privateIpAddress>172.31.19.184</privateIpAddress>
-                            <privateDnsName>ip-172-31-19-184.eu-west-1.compute.internal</privateDnsName>
-                            <sourceDestCheck>true</sourceDestCheck>
-                            <groupSet>
-                                <item>
-                                    <groupId>sg-c97703b2</groupId>
-                                    <groupName>ec2-jenkins-group</groupName>
-                                </item>
-                            </groupSet>
-                            <attachment>
-                                <attachmentId>eni-attach-e1e4320e</attachmentId>
-                                <deviceIndex>0</deviceIndex>
-                                <status>attached</status>
-                                <attachTime>2017-12-06T07:31:18.000Z</attachTime>
-                                <deleteOnTermination>true</deleteOnTermination>
-                            </attachment>
-                            <privateIpAddressesSet>
-                                <item>
-                                    <privateIpAddress>172.31.19.184</privateIpAddress>
-                                    <privateDnsName>ip-172-31-19-184.eu-west-1.compute.internal</privateDnsName>
-                                    <primary>true</primary>
-                                </item>
-                            </privateIpAddressesSet>
-                            <ipv6AddressesSet/>
-                        </item>
-                    </networkInterfaceSet>
-                    <iamInstanceProfile>
-                        <arn>arn:aws:iam::231871078230:instance-profile/JenkinsEC2Role</arn>
-                        <id>AIPAJLHDH555WLDP2UO5M</id>
-                    </iamInstanceProfile>
-                    <ebsOptimized>false</ebsOptimized>
-                    <enaSupport>true</enaSupport>
-                </item>
-            </instancesSet>
-        </item>
-        <item>
-            <reservationId>r-0e6fe4b5bd4f094c7</reservationId>
-            <ownerId>231871078230</ownerId>
-            <groupSet/>
-            <instancesSet>
-                <item>
-                    <instanceId>i-035670bba20ad4225</instanceId>
-                    <imageId>ami-c90195b0</imageId>
-                    <instanceState>
-                        <code>80</code>
-                        <name>stopped</name>
-                    </instanceState>
-                    <privateDnsName>ip-172-31-26-139.eu-west-1.compute.internal</privateDnsName>
-                    <dnsName/>
-                    <reason>User initiated (2018-02-09 08:21:00 GMT)</reason>
-                    <keyName>mafit</keyName>
-                    <amiLaunchIndex>0</amiLaunchIndex>
-                    <productCodes/>
-                    <instanceType>t2.medium</instanceType>
-                    <launchTime>2018-02-05T19:52:04.000Z</launchTime>
-                    <placement>
-                        <availabilityZone>eu-west-1c</availabilityZone>
-                        <groupName/>
-                        <tenancy>default</tenancy>
-                    </placement>
-                    <monitoring>
-                        <state>disabled</state>
-                    </monitoring>
-                    <subnetId>subnet-d3f41ca5</subnetId>
-                    <vpcId>vpc-68fde40d</vpcId>
-                    <privateIpAddress>172.31.26.139</privateIpAddress>
-                    <sourceDestCheck>true</sourceDestCheck>
-                    <groupSet>
-                        <item>
-                            <groupId>sg-5ce83e26</groupId>
-                            <groupName>openshift</groupName>
-                        </item>
-                    </groupSet>
-                    <stateReason>
-                        <code>Client.UserInitiatedShutdown</code>
-                        <message>Client.UserInitiatedShutdown: User initiated shutdown</message>
-                    </stateReason>
-                    <architecture>x86_64</architecture>
-                    <rootDeviceType>ebs</rootDeviceType>
-                    <rootDeviceName>/dev/sda1</rootDeviceName>
-                    <blockDeviceMapping>
-                        <item>
-                            <deviceName>/dev/sda1</deviceName>
-                            <ebs>
-                                <volumeId>vol-07fed2cb61da38778</volumeId>
-                                <status>attached</status>
-                                <attachTime>2018-02-05T19:52:05.000Z</attachTime>
-                                <deleteOnTermination>true</deleteOnTermination>
-                            </ebs>
-                        </item>
-                    </blockDeviceMapping>
-                    <virtualizationType>hvm</virtualizationType>
-                    <clientToken/>
-                    <tagSet>
-                        <item>
-                            <key>Name</key>
-                            <value>openshift-master</value>
-                        </item>
-                    </tagSet>
-                    <hypervisor>xen</hypervisor>
-                    <networkInterfaceSet>
-                        <item>
-                            <networkInterfaceId>eni-aee9fb9e</networkInterfaceId>
-                            <subnetId>subnet-d3f41ca5</subnetId>
-                            <vpcId>vpc-68fde40d</vpcId>
-                            <description/>
-                            <ownerId>231871078230</ownerId>
-                            <status>in-use</status>
-                            <macAddress>06:b4:17:39:13:92</macAddress>
-                            <privateIpAddress>172.31.26.139</privateIpAddress>
-                            <privateDnsName>ip-172-31-26-139.eu-west-1.compute.internal</privateDnsName>
-                            <sourceDestCheck>true</sourceDestCheck>
-                            <groupSet>
-                                <item>
-                                    <groupId>sg-5ce83e26</groupId>
-                                    <groupName>openshift</groupName>
-                                </item>
-                            </groupSet>
-                            <attachment>
-                                <attachmentId>eni-attach-c8c703b2</attachmentId>
-                                <deviceIndex>0</deviceIndex>
-                                <status>attached</status>
-                                <attachTime>2018-02-05T19:52:04.000Z</attachTime>
-                                <deleteOnTermination>true</deleteOnTermination>
-                            </attachment>
-                            <privateIpAddressesSet>
-                                <item>
-                                    <privateIpAddress>172.31.26.139</privateIpAddress>
-                                    <privateDnsName>ip-172-31-26-139.eu-west-1.compute.internal</privateDnsName>
-                                    <primary>true</primary>
-                                </item>
-                            </privateIpAddressesSet>
-                            <ipv6AddressesSet/>
-                        </item>
-                    </networkInterfaceSet>
-                    <ebsOptimized>false</ebsOptimized>
-                    <enaSupport>true</enaSupport>
-                </item>
-            </instancesSet>
-        </item>
-    </reservationSet>
-</DescribeInstancesResponse>
-2018-02-10 16:51:50,567 - DEBUG: Event needs-retry.ec2.DescribeInstances: calling handler <botocore.retryhandler.RetryHandler object at 0x35a4410>
-2018-02-10 16:51:50,568 - DEBUG: No retry needed.
-2018-02-10 16:51:50,568 - DEBUG: Loading ec2:Instance
-2018-02-10 16:51:50,570 - DEBUG: Renaming Instance attribute network_interfaces
-2018-02-10 16:51:50,573 - DEBUG: Event creating-resource-class.ec2.Instance: calling handler <function _handler at 0x242bcf8>
+<InitiateMultipartUploadResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Bucket>mafit-openshift</Bucket><Key>multipart.tar.gz</Key><UploadId>_.Kq7eKw0CZt7OLtgwpR9s8da5tIsRJwVgIhwO6DMplcg.oRkU9utPsGDDNN4rBWSb.T0AL.ltsxfxwwnF90CF4VX_I7Nic9UfW299RLVtUDcrdXv_2IrYBt1d_B5lmG</UploadId></InitiateMultipartUploadResult>
+2018-06-16 10:59:04,359 - DEBUG: Event needs-retry.s3.CreateMultipartUpload: calling handler <botocore.retryhandler.RetryHandler object at 0x3188410>
+2018-06-16 10:59:04,360 - DEBUG: No retry needed.
+2018-06-16 10:59:04,360 - DEBUG: Event needs-retry.s3.CreateMultipartUpload: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x3188490>>
+2018-06-16 10:59:04,363 - DEBUG: Event before-parameter-build.s3.UploadPart: calling handler <function sse_md5 at 0x284e410>
+2018-06-16 10:59:04,363 - DEBUG: Event before-parameter-build.s3.UploadPart: calling handler <function convert_body_to_file_like_object at 0x284f500>
+2018-06-16 10:59:04,363 - DEBUG: Event before-parameter-build.s3.UploadPart: calling handler <function validate_bucket_name at 0x284e398>
+2018-06-16 10:59:04,364 - DEBUG: Event before-parameter-build.s3.UploadPart: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x3188490>>
+2018-06-16 10:59:04,364 - DEBUG: Event before-parameter-build.s3.UploadPart: calling handler <function generate_idempotent_uuid at 0x284e050>
+2018-06-16 10:59:04,365 - DEBUG: Event before-call.s3.UploadPart: calling handler <function conditionally_calculate_md5 at 0x284e320>
+2018-06-16 10:59:04,366 - DEBUG: Event before-call.s3.UploadPart: calling handler <function add_expect_header at 0x284e7d0>
+2018-06-16 10:59:04,366 - DEBUG: Adding expect 100 continue header to request.
+2018-06-16 10:59:04,366 - DEBUG: Event before-call.s3.UploadPart: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x3188490>>
+2018-06-16 10:59:04,366 - DEBUG: Making request for OperationModel(name=UploadPart) (verify_ssl=True) with params: {'body': <StringIO.StringIO instance at 0x3198680>, 'url': u'https://s3.eu-west-1.amazonaws.com/mafit-openshift/multipart.tar.gz?partNumber=1&uploadId=_.Kq7eKw0CZt7OLtgwpR9s8da5tIsRJwVgIhwO6DMplcg.oRkU9utPsGDDNN4rBWSb.T0AL.ltsxfxwwnF90CF4VX_I7Nic9UfW299RLVtUDcrdXv_2IrYBt1d_B5lmG', 'headers': {'Content-MD5': u'hkxx1TCkJCFHZFgAXgWyoA==', 'Expect': '100-continue', 'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34'}, 'context': {'auth_type': None, 'client_region': 'eu-west-1', 'signing': {'bucket': 'mafit-openshift'}, 'has_streaming_input': True, 'client_config': <botocore.config.Config object at 0x30d5490>}, 'query_string': {u'partNumber': 1, u'uploadId': '_.Kq7eKw0CZt7OLtgwpR9s8da5tIsRJwVgIhwO6DMplcg.oRkU9utPsGDDNN4rBWSb.T0AL.ltsxfxwwnF90CF4VX_I7Nic9UfW299RLVtUDcrdXv_2IrYBt1d_B5lmG'}, 'url_path': u'/mafit-openshift/multipart.tar.gz', 'method': u'PUT'}
+2018-06-16 10:59:04,367 - DEBUG: Event request-created.s3.UploadPart: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x30d5410>>
+2018-06-16 10:59:04,367 - DEBUG: Event choose-signer.s3.UploadPart: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x2fa36d0>>
+2018-06-16 10:59:04,367 - DEBUG: Event choose-signer.s3.UploadPart: calling handler <function set_operation_specific_signer at 0x2842ed8>
+2018-06-16 10:59:04,367 - DEBUG: Event before-sign.s3.UploadPart: calling handler <function fix_s3_host at 0x25fd2a8>
+2018-06-16 10:59:04,368 - DEBUG: Calculating signature using v4 auth.
+2018-06-16 10:59:04,368 - DEBUG: CanonicalRequest:
+PUT
+/mafit-openshift/multipart.tar.gz
+partNumber=1&uploadId=_.Kq7eKw0CZt7OLtgwpR9s8da5tIsRJwVgIhwO6DMplcg.oRkU9utPsGDDNN4rBWSb.T0AL.ltsxfxwwnF90CF4VX_I7Nic9UfW299RLVtUDcrdXv_2IrYBt1d_B5lmG
+content-md5:hkxx1TCkJCFHZFgAXgWyoA==
+host:s3.eu-west-1.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20180616T095904Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+2018-06-16 10:59:04,368 - DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180616T095904Z
+20180616/eu-west-1/s3/aws4_request
+f712e0f17ae12e165f3c5d9b336b226fee7f0505c11ef0ef5ebe54219afb7811
+2018-06-16 10:59:04,369 - DEBUG: Signature:
+501a77e84fe322944f4d26e31c99821e0d1e517302b368eb9424719fda562ae7
+2018-06-16 10:59:04,370 - DEBUG: Sending http request: <PreparedRequest [PUT]>
+2018-06-16 10:59:04,371 - DEBUG: Waiting for 100 Continue response.
+2018-06-16 10:59:04,491 - DEBUG: 100 Continue response seen, now sending request body.
+2018-06-16 10:59:04,536 - DEBUG: "PUT /mafit-openshift/multipart.tar.gz?partNumber=1&uploadId=_.Kq7eKw0CZt7OLtgwpR9s8da5tIsRJwVgIhwO6DMplcg.oRkU9utPsGDDNN4rBWSb.T0AL.ltsxfxwwnF90CF4VX_I7Nic9UfW299RLVtUDcrdXv_2IrYBt1d_B5lmG HTTP/1.1" 200 0
+2018-06-16 10:59:04,538 - DEBUG: Response headers: {'content-length': '0', 'x-amz-id-2': 'XLPm15aXCsPT0j5hrzTCsqf4p6rOYw4TCallGMSPRFPgrArU4hqRv4Ldvz6dtzCGJsUeZODSqxU=', 'server': 'AmazonS3', 'x-amz-request-id': '037B0E5E714ACDEF', 'etag': '"864c71d530a42421476458005e05b2a0"', 'date': 'Sat, 16 Jun 2018 09:59:05 GMT'}
+2018-06-16 10:59:04,538 - DEBUG: Response body:
+
+2018-06-16 10:59:04,540 - DEBUG: Event needs-retry.s3.UploadPart: calling handler <botocore.retryhandler.RetryHandler object at 0x3188410>
+2018-06-16 10:59:04,541 - DEBUG: No retry needed.
+2018-06-16 10:59:04,541 - DEBUG: Event needs-retry.s3.UploadPart: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x3188490>>
+2018-06-16 10:59:04,543 - DEBUG: Event before-parameter-build.s3.CompleteMultipartUpload: calling handler <function validate_bucket_name at 0x284e398>
+2018-06-16 10:59:04,543 - DEBUG: Event before-parameter-build.s3.CompleteMultipartUpload: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x3188490>>
+2018-06-16 10:59:04,544 - DEBUG: Event before-parameter-build.s3.CompleteMultipartUpload: calling handler <function generate_idempotent_uuid at 0x284e050>
+2018-06-16 10:59:04,548 - DEBUG: Event before-call.s3.CompleteMultipartUpload: calling handler <function add_expect_header at 0x284e7d0>
+2018-06-16 10:59:04,549 - DEBUG: Event before-call.s3.CompleteMultipartUpload: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x3188490>>
+2018-06-16 10:59:04,549 - DEBUG: Making request for OperationModel(name=CompleteMultipartUpload) (verify_ssl=True) with params: {'body': '<CompleteMultipartUpload xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Part><PartNumber>1</PartNumber><ETag>"864c71d530a42421476458005e05b2a0"</ETag></Part></CompleteMultipartUpload>', 'url': u'https://s3.eu-west-1.amazonaws.com/mafit-openshift/multipart.tar.gz?uploadId=_.Kq7eKw0CZt7OLtgwpR9s8da5tIsRJwVgIhwO6DMplcg.oRkU9utPsGDDNN4rBWSb.T0AL.ltsxfxwwnF90CF4VX_I7Nic9UfW299RLVtUDcrdXv_2IrYBt1d_B5lmG', 'headers': {'User-Agent': 'Boto3/1.4.6 Python/2.7.5 Linux/3.10.0-693.17.1.el7.x86_64 Botocore/1.8.34'}, 'context': {'auth_type': None, 'client_region': 'eu-west-1', 'signing': {'bucket': 'mafit-openshift'}, 'has_streaming_input': False, 'client_config': <botocore.config.Config object at 0x30d5490>}, 'query_string': {u'uploadId': '_.Kq7eKw0CZt7OLtgwpR9s8da5tIsRJwVgIhwO6DMplcg.oRkU9utPsGDDNN4rBWSb.T0AL.ltsxfxwwnF90CF4VX_I7Nic9UfW299RLVtUDcrdXv_2IrYBt1d_B5lmG'}, 'url_path': u'/mafit-openshift/multipart.tar.gz', 'method': u'POST'}
+2018-06-16 10:59:04,549 - DEBUG: Event request-created.s3.CompleteMultipartUpload: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x30d5410>>
+2018-06-16 10:59:04,550 - DEBUG: Event choose-signer.s3.CompleteMultipartUpload: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x2fa36d0>>
+2018-06-16 10:59:04,550 - DEBUG: Event choose-signer.s3.CompleteMultipartUpload: calling handler <function set_operation_specific_signer at 0x2842ed8>
+2018-06-16 10:59:04,550 - DEBUG: Event before-sign.s3.CompleteMultipartUpload: calling handler <function fix_s3_host at 0x25fd2a8>
+2018-06-16 10:59:04,551 - DEBUG: Calculating signature using v4 auth.
+2018-06-16 10:59:04,551 - DEBUG: CanonicalRequest:
+POST
+/mafit-openshift/multipart.tar.gz
+uploadId=_.Kq7eKw0CZt7OLtgwpR9s8da5tIsRJwVgIhwO6DMplcg.oRkU9utPsGDDNN4rBWSb.T0AL.ltsxfxwwnF90CF4VX_I7Nic9UfW299RLVtUDcrdXv_2IrYBt1d_B5lmG
+host:s3.eu-west-1.amazonaws.com
+x-amz-content-sha256:6ad09c2dec09127e064db452a4903dd480204ef356db6e7b76a1e5b8c033ea46
+x-amz-date:20180616T095904Z
+
+host;x-amz-content-sha256;x-amz-date
+6ad09c2dec09127e064db452a4903dd480204ef356db6e7b76a1e5b8c033ea46
+2018-06-16 10:59:04,551 - DEBUG: StringToSign:
+AWS4-HMAC-SHA256
+20180616T095904Z
+20180616/eu-west-1/s3/aws4_request
+e9fe1b78c08d17f3103f77ab6db181fa4461c42a5f2dcce51144e433696191b4
+2018-06-16 10:59:04,552 - DEBUG: Signature:
+df248497dce02d52770842eb20ec032659fc7360bfd285d5bcb9ad3eb73511d6
+2018-06-16 10:59:04,552 - DEBUG: Sending http request: <PreparedRequest [POST]>
+2018-06-16 10:59:04,717 - DEBUG: "POST /mafit-openshift/multipart.tar.gz?uploadId=_.Kq7eKw0CZt7OLtgwpR9s8da5tIsRJwVgIhwO6DMplcg.oRkU9utPsGDDNN4rBWSb.T0AL.ltsxfxwwnF90CF4VX_I7Nic9UfW299RLVtUDcrdXv_2IrYBt1d_B5lmG HTTP/1.1" 200 None
+2018-06-16 10:59:04,760 - DEBUG: Response headers: {'x-amz-id-2': 'iFV2QCXKzKMi3Wohn6Pn/UObj2Py15vBNIqyi8CPF/zgv+SLYEA1NFQMGVBzfHR6Dl+K+hP5n14=', 'server': 'AmazonS3', 'transfer-encoding': 'chunked', 'x-amz-request-id': 'CA4EA93199A8641C', 'date': 'Sat, 16 Jun 2018 09:59:05 GMT', 'content-type': 'application/xml'}
+2018-06-16 10:59:04,761 - DEBUG: Response body:
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CompleteMultipartUploadResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Location>https://s3.eu-west-1.amazonaws.com/mafit-openshift/multipart.tar.gz</Location><Bucket>mafit-openshift</Bucket><Key>multipart.tar.gz</Key><ETag>&quot;98874304ecf3568b2bdbfcac4c0720bf-1&quot;</ETag></CompleteMultipartUploadResult>
+2018-06-16 10:59:04,761 - DEBUG: Event needs-retry.s3.CompleteMultipartUpload: calling handler <function check_for_200_error at 0x2842de8>
+2018-06-16 10:59:04,762 - DEBUG: Event needs-retry.s3.CompleteMultipartUpload: calling handler <botocore.retryhandler.RetryHandler object at 0x3188410>
+2018-06-16 10:59:04,762 - DEBUG: No retry needed.
+2018-06-16 10:59:04,762 - DEBUG: Event needs-retry.s3.CompleteMultipartUpload: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x3188490>>
